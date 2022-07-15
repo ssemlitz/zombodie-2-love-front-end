@@ -1,7 +1,7 @@
+import { useState } from "react"
 import CreateProfileForm from "../../components/CreateProfileForm/CreateProfileForm"
 
 const CreateProfile = props => {
-  
 
   return (
     <>
