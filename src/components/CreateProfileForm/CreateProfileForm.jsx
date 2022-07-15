@@ -22,8 +22,8 @@ function CreateProfileForm (props) {
               type="text"
               className="create-form"
               id="species-input"
-              species="species"
-              value={profileData.species}
+              name="species"
+              // value={profileData.species}
               required
             />
           <label>Who you want to date? :</label>
@@ -31,24 +31,24 @@ function CreateProfileForm (props) {
               type="checkbox"
               className="create-form"
               id="species-input"
-              species="species"
-              value={profileData.species}
+              name="species"
+              // value={profileData.species}
               required
             />D E A D
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
-              species="species"
-              value={profileData.species}
+              name="species"
+              // value={profileData.species}
               required
             /> HUMAN
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
-              species="species"
-              value={profileData.species}
+              name="species"
+              // value={profileData.species}
               required
             /> HALFBIE
 
@@ -59,8 +59,8 @@ function CreateProfileForm (props) {
               type="text"
               className="create-form"
               id="height-input"
-              height="height"
-              value={profileData.height}
+              name="height"
+              // value={profileData.height}
               required
             />
         </div>
@@ -70,8 +70,8 @@ function CreateProfileForm (props) {
               type="text"
               className="create-form"
               id="age-input"
-              age="age"
-              value={profileData.age}
+              name="age"
+              // value={profileData.age}
               required
             />
         </div>
@@ -81,16 +81,16 @@ function CreateProfileForm (props) {
               type="checkbox"
               className="create-form"
               id="brains-input"
-              brains="brains"
-              value={profileData.brains}
+              name="brains"
+              // value={profileData.brains}
               required
             />Yes
             <input
               type="checkbox"
               className="create-form"
               id="brains-input"
-              brains="brains"
-              value={profileData.brains}
+              name="brains"
+              // value={profileData.brains}
               required
             /> No
 
@@ -98,14 +98,14 @@ function CreateProfileForm (props) {
         <div>
           <label>Bio: </label>
           <input
-              type="textarea"
+              type="text"
               className="create-form"
               id="bio-input"
               bio="bio"
-              value={profileData.bio}
+              // value={profileData.bio}
               required
             />
-            <textarea></textarea>
+        
 
 
         </div>
