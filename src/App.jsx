@@ -7,6 +7,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
+import './styles/App.css'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
