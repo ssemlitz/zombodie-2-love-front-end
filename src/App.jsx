@@ -36,9 +36,7 @@ const App = () => {
         <Route 
           path="/create-profile"
           element={<CreateProfile />}
-          >
-
-        </Route>
+          />
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
