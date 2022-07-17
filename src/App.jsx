@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import * as authService from './services/authService'
 import './styles/App.css'
+import Matches from './pages/Matches/Matches'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -39,6 +40,10 @@ const App = () => {
         <Route
           path="/profiles"
           element={user ? <Profiles /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/matches"
+          element={<Matches />}
         />
         <Route
           path="/changePassword"
