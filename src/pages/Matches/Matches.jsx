@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
+import Logo from '../../assets/zombieapp-logo.png'
 
 
 const Matches = () => {
@@ -7,7 +8,11 @@ const Matches = () => {
 
   return (
     <nav>
-      <h1>Matches</h1>
+      <img 
+        img src={Logo} 
+        alt="" 
+        id="logo" 
+      />
     </nav>
   )
 }
