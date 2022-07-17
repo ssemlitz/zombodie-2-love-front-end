@@ -98,7 +98,7 @@ function CreateProfileForm (props) {
         <div>
           <label>Bio: </label>
           <input
-              type="text"
+              type="textarea"
               className="create-form"
               id="bio-input"
               bio="bio"
