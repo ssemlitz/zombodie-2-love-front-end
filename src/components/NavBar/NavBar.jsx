@@ -16,6 +16,7 @@ const NavBar = ({ user, handleLogout }) => {
         </nav>
       :
         <nav>
+          <img src={Logo} alt="" id="landing-logo" />
           <Link to="/login">Log In</Link>
           <Link to="/signup">Sign Up</Link>
         </nav>
