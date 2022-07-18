@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/zombieapp-logo.png'
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material'
-// import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from '@mui/system'
 
 
@@ -34,14 +34,14 @@ const NavBar = ({ user, handleLogout }) => {
                   component="div">
                   <Box 
                     sx={{ display: "flex" }}>
-                    <Link to="/Messages">
+                    <Link to="/messages">
                       <Typography 
                         sx={{ 
                           marginRight: "20px", 
                           cursor: "pointer", 
                           color: "#616161" }}>Messages</Typography>
                     </Link>
-                    <Typography 
+                    <Box 
                       sx={{ 
                         marginRight: "20px", 
                         cursor: "pointer", 
@@ -51,8 +51,10 @@ const NavBar = ({ user, handleLogout }) => {
                         aria-expanded={openMenu ? "true" : undefined }
                         onClick={handleOpen}
                         >
-                          Profile
-                    </Typography>
+                          <IconButton>
+                            <MenuRoundedIcon />
+                          </IconButton>
+                    </Box>
                     <Menu id="profile-dropdown" anchorEl={anchorEl}
                     open={openMenu}
                     onClose={handleClose}
@@ -65,11 +67,9 @@ const NavBar = ({ user, handleLogout }) => {
                       </Link>
                     </Menu>
                   </Box>
-                  {/* <Box>
-                    <IconButton>
-                      <MenuRoundedIcon/>
-                    </IconButton>
-                  </Box> */}
+                  <Box>
+                    
+                  </Box>
                 </Box>
               </Toolbar>
             </AppBar>
