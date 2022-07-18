@@ -12,6 +12,7 @@ import * as profileService from "./services/profileService"
 import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
+import editProfile from './pages/EditProfile/EditProfile'
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -54,8 +55,12 @@ const App = () => {
           path="/create-profile"
           element={<CreateProfile handleCreateProfile={handleCreateProfile}/>}
           />
+        <Route
+          path="edit-profile"
+          element={<editProfile />}
+        />
         { <Route  
-          path="/Messages"
+          path="/messages"
           element={<Messages />}
         /> }
         <Route
