@@ -127,8 +127,8 @@ function CreateProfileForm (props) {
         </div>
         <div>
           <label>Bio: </label>
-          <input
-              type="text"
+          <textarea
+              autoComplete="off"
               className="create-form"
               id="bio-input"
               name="bio"
