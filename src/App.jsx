@@ -13,6 +13,7 @@ import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
 import EditProfile from './pages/EditProfile/EditProfile'
+import LandingData from './pages/Landing/LandingData'
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -44,6 +45,7 @@ const App = () => {
 
   return (
     <>
+      {/* <LandingData /> */}
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
