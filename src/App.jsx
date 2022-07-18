@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import * as authService from './services/authService'
+import * as profileService from "./services/profileService"
 import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 
@@ -15,6 +16,14 @@ const App = () => {
   const [profiles, setProfiles] = useState([])
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  
+  useEffect(() => {
+    const fetchAllProfiles = async () => {
+      const profileData = await profileService.getAll()
+      setProfiles(profileData)
+    }
+    fetchAllProfiles()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
@@ -26,8 +35,9 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleCreateProfile = newProfileData => {
-    setProfiles([...profiles, newProfileData])
+  const handleCreateProfile = async newProfileData => {
+    const newProfile = await profileService.create(newProfileData)
+    setProfiles([...profiles, newProfile])
   }
 
   return (

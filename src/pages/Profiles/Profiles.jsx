@@ -14,7 +14,7 @@ const Profiles = () => {
 
   return (
     <>
-      <h1>Hello. This is a list of all the profiles.</h1>
+      <h1>Potential Matches</h1>
       {profiles.length ? 
         <>
           {profiles.map(profile =>
