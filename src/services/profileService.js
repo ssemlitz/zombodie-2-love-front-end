@@ -15,6 +15,20 @@ async function create(profile) {
   return res.json()
 }
 
+async function updateProfile(profile) {
+  const res = await fetch(BASE_URL, {
+    method: "PUT",
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(profile)
+
+  })
+  return res.json()
+}
+
+
 async function getAll() {
   const res = await fetch(BASE_URL)
   return res.json()
@@ -42,5 +56,6 @@ export {
   getAllProfiles, 
   addPhoto,
   create,
-  getAll
+  getAll,
+  updateProfile as update
 }

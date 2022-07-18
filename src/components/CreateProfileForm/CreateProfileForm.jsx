@@ -5,9 +5,12 @@ function CreateProfileForm (props) {
   const [validForm, setValidForm] = useState(false)
   const [profileData, setProfileData] = useState({
     species:"",
-    brains: Boolean,
-    age: Number,
-    height: Number, 
+    brains: false,
+    prefersZombie: false, 
+    prefersHuman: false, 
+    prefersHalfbie: false,
+    age: "",
+    height: "", 
     bio: "", 
 
   })
@@ -16,10 +19,14 @@ function CreateProfileForm (props) {
     setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
   
   }
+  const handleToggle = evt => {
+    setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value })
+  
+  }
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleCreateProfile(profileData)
+    props.handleUpdateProfile(profileData)
   }
   
   useEffect(() => {
@@ -50,27 +57,27 @@ function CreateProfileForm (props) {
               type="checkbox"
               className="create-form"
               id="species-input"
-              name="species"
-              value={profileData.species}
-              onChange={handleChange}
+              name="prefersZombie"
+              value={profileData.prefersZombie}
+              onChange={handleToggle}
         
             />D E A D
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
-              name="species"
-              value={profileData.species}
-              onChange={handleChange}
+              name="prefersHuman"
+              value={profileData.prefersHuman}
+              onChange={handleToggle}
 
             /> HUMAN
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
-              name="species"
-              value={profileData.species}
-              onChange={handleChange}
+              name="prefersHalfbie"
+              value={profileData.prefersHalfbie}
+              onChange={handleToggle}
         
             /> HALFBIE
 
@@ -105,7 +112,7 @@ function CreateProfileForm (props) {
               id="brains-input"
               name="brains"
               value={profileData.brains}
-              onChange={handleChange}
+              onChange={handleToggle}
 
             />Yes
             <input
