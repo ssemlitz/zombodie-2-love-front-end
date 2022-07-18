@@ -10,6 +10,7 @@ import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import * as authService from './services/authService'
 import './styles/App.css'
 import Matches from './pages/Matches/Matches'
+import Messages from './pages/Messages/Messages'
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -43,6 +44,10 @@ const App = () => {
           path="/create-profile"
           element={<CreateProfile handleCreateProfile={handleCreateProfile}/>}
           />
+        <Route
+          path="/messages"
+          element={<Messages />}
+        />
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
