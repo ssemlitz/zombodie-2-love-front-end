@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -15,6 +15,14 @@ const App = () => {
   const [profiles, setProfiles] = useState([])
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+  
+  useEffect(() => {
+    const fetchAllProfiles = async () => {
+      const profileData = await profileService.getAll()
+      setProfiles(profileData)
+    }
+    fetchAllProfiles()
+  }, [])
 
   const handleLogout = () => {
     authService.logout()
