@@ -1,4 +1,5 @@
 import {useState, useRef, useEffect } from "react"
+import { Link } from 'react-router-dom'
 
 function CreateProfileForm (props) {
   const formElement = useRef()
@@ -50,8 +51,8 @@ function CreateProfileForm (props) {
               name="species"
               value={profileData.species}
               onChange={handleChange}
-              required
-            />
+              require
+              />
           <label>Who you want to date? :</label>
             <input
               type="checkbox"
@@ -138,13 +139,17 @@ function CreateProfileForm (props) {
 
         </div>
         <div className="btn">
+          <Link to="/signup">
           <button>Back:</button>
+          </Link>
+          <Link to="/profiles">
           <button
           type="submit"
           className="btn-finish"
           disabled={!validForm}
           >
             Finish</button>
+          </Link>
         </div>
 
       </div>
