@@ -8,6 +8,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateProfile from "./pages/CreateProfile/CreateProfile"
 import * as authService from './services/authService'
+import * as profileService from "./services/profileService"
 import './styles/App.css'
 
 const App = () => {
@@ -25,8 +26,9 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleCreateProfile = newProfileData => {
-    setProfiles([...profiles, newProfileData])
+  const handleCreateProfile = async newProfileData => {
+    const newProfile = await profileService.create(newProfileData)
+    setProfiles([...profiles, newProfile])
   }
 
   return (
