@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../../assets/zombieapp-logo.png'
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+// import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from '@mui/system'
 
 const NavBar = ({ user, handleLogout }) => {
@@ -23,6 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
             <AppBar elevation={5} sx={{ backgroundColor: "#fff" }}>
               <Toolbar>
+                <img src={Logo} alt="" id="logo" />
                 <Box 
                   sx={{ 
                     display: "flex", 
@@ -32,11 +33,6 @@ const NavBar = ({ user, handleLogout }) => {
                   component="div">
                   <Box 
                     sx={{ display: "flex" }}>
-                    <Typography 
-                      sx={{ 
-                        marginRight: "20px", 
-                        cursor: "pointer", 
-                        color: "#616161" }}>Logo</Typography>
                     <Typography 
                       sx={{ 
                         marginRight: "20px", 
@@ -58,8 +54,9 @@ const NavBar = ({ user, handleLogout }) => {
                     open={openMenu}
                     onClose={handleClose}
                     >
-                      
-                      <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
+                      <Link to="/edit-profile">
+                        <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
+                      </Link>
                         <Link to="" onClick={handleLogout}>
                         <MenuItem onClick={handleClose}>Log Out</MenuItem>
                       </Link>
