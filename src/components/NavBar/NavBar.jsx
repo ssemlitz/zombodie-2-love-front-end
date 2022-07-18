@@ -24,7 +24,9 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
             <AppBar elevation={5} sx={{ backgroundColor: "#fff" }}>
               <Toolbar>
+                <Link to="/">
                 <img src={Logo} alt="" id="logo" />
+                </Link>
                 <Box 
                   sx={{ 
                     display: "flex", 
