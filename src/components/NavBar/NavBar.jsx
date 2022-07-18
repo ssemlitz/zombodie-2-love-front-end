@@ -13,6 +13,11 @@ const NavBar = ({ user, handleLogout }) => {
             <Link to="/changePassword">Change Password</Link>
             <Link to="/Messages">Messages</Link>
             <Link to="" onClick={handleLogout}>Log Out</Link>
+            <img 
+              src="" 
+              alt=""
+              id="profile-pic-placeholder" 
+            />
         </nav>
       :
         <nav>
