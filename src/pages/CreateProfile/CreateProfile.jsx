@@ -7,7 +7,7 @@ const CreateProfile = props => {
     <>
       <h1>Create Profile</h1>
       <main>
-      <CreateProfileForm />
+      <CreateProfileForm handleUpdateProfile={props.handleUpdateProfile}/>
 
       </main>
 

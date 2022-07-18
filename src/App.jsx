@@ -38,8 +38,8 @@ const App = () => {
     setUser(authService.getUser())
   }
 
-  const handleCreateProfile = async newProfileData => {
-    const newProfile = await profileService.create(newProfileData)
+  const handleUpdateProfile = async ProfileData => {
+    const newProfile = await profileService.update(ProfileData)
     setProfiles([...profiles, newProfile])
   }
 
@@ -55,7 +55,7 @@ const App = () => {
         />
         <Route 
           path="/create-profile"
-          element={<CreateProfile handleCreateProfile={handleCreateProfile}/>}
+          element={<CreateProfile handleUpdateProfile={handleUpdateProfile}/> }
           />
         <Route
           path="edit-profile"
@@ -65,6 +65,7 @@ const App = () => {
           path="/messages"
           element={<Messages />}
         /> }
+
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
