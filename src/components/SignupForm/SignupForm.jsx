@@ -106,9 +106,11 @@ const SignupForm = props => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <button disabled={isFormInvalid()} className={styles.button}>
-          Sign Up
-        </button>
+        <Link to="/create-profile">
+          <button disabled={isFormInvalid()} className={styles.button}>
+            Sign Up
+          </button>
+        </Link>
         <Link to="/">
           <button>Cancel</button>
         </Link>
