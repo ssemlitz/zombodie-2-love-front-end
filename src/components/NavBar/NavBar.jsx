@@ -6,6 +6,7 @@ import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from 
 // import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from '@mui/system'
 
+
 const NavBar = ({ user, handleLogout }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
@@ -33,11 +34,13 @@ const NavBar = ({ user, handleLogout }) => {
                   component="div">
                   <Box 
                     sx={{ display: "flex" }}>
-                    <Typography 
-                      sx={{ 
-                        marginRight: "20px", 
-                        cursor: "pointer", 
-                        color: "#616161" }}>Messages</Typography>
+                    <Link to="/Messages">
+                      <Typography 
+                        sx={{ 
+                          marginRight: "20px", 
+                          cursor: "pointer", 
+                          color: "#616161" }}>Messages</Typography>
+                    </Link>
                     <Typography 
                       sx={{ 
                         marginRight: "20px", 
