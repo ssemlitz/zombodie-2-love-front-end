@@ -12,6 +12,7 @@ import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 
 const App = () => {
+  const [profiles, setProfiles] = useState([])
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
 
@@ -25,6 +26,10 @@ const App = () => {
     setUser(authService.getUser())
   }
 
+  const handleCreateProfile = newProfileData => {
+    setProfiles([...profiles, newProfileData])
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -36,7 +41,7 @@ const App = () => {
         />
         <Route 
           path="/create-profile"
-          element={<CreateProfile />}
+          element={<CreateProfile handleCreateProfile={handleCreateProfile}/>}
           />
         <Route
           path="/login"
