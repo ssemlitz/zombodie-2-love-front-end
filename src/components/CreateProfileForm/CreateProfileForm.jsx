@@ -16,16 +16,23 @@ function CreateProfileForm (props) {
     setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
   
   }
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.handleCreateProfile(profileData)
+  }
   
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [profileData])
+
+
   
   return(
     <>
 
     <h1>Tell us more about you </h1>
-    <form autoComplete="off" ref={formElement} >
+    <form autoComplete="off" ref={formElement} onSubmit={handleSubmit} >
     <div className="create-profile-form">
         <div>
           <label>Species required </label>
