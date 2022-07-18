@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as profileService from '../../services/profileService'
 
-import CreateProfile from '../CreateProfile/CreateProfile'
 
 const Profiles = () => {
   const [profiles, setProfiles] = useState([])
@@ -20,7 +19,43 @@ const Profiles = () => {
       {profiles.length ? 
         <>
           {profiles.map(profile =>
-            <p key={profile._id}>{profile.name}</p>
+            <div key={profile._id}>
+              <h1>
+              {profile.name}
+              </h1> 
+              <p> Species: 
+              {profile.species}
+              </p>
+              <p> Do you eat brains?
+              {profile.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
+              </p>
+              <p> Prefer to date: 
+              {profile.prefersZombie = true ? "Zombies" : profile.prefersHalfbie = true ? "Halbies": profile.prefersHuman = true ? "Humans" : "I ain't got no type"}
+              </p>
+              <p>
+              {profile.prefersHuman}
+
+              </p>
+              <p>
+              {profile.prefersHalfbie}
+              </p>
+              <p>
+              {profile.age} years old
+
+              </p>
+              height:
+              <p>
+              {profile.height}"
+
+              </p>
+              About Me: 
+              <p>
+              {profile.bio}
+              </p>
+
+              </div>
+
+
           )}
         </>
       :
