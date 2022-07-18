@@ -1,6 +1,8 @@
-import {useState } from "react"
+import {useState, useRef, useEffect } from "react"
 
 function CreateProfileForm (props) {
+  const formElement = useRef()
+  const [validForm, setValidForm] = useState(false)
   const [profileData, setProfileData] = useState({
     species:"",
     brains: Boolean,
@@ -9,16 +11,21 @@ function CreateProfileForm (props) {
     bio: "", 
 
   })
+
   const handleChange = evt => {
     setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
-    
+  
   }
+  
+  useEffect(() => {
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [profileData])
   
   return(
     <>
 
     <h1>Tell us more about you </h1>
-    <form>
+    <form autoComplete="off" ref={formElement} >
     <div className="create-profile-form">
         <div>
           <label>Species required </label>
@@ -70,7 +77,6 @@ function CreateProfileForm (props) {
               name="height"
               value={profileData.height}
               onChange={handleChange}
-              required
             />
         </div>
         <div>
@@ -82,7 +88,6 @@ function CreateProfileForm (props) {
               name="age"
               value={profileData.age}
               onChange={handleChange}
-              required
             />
         </div>
         <div>
@@ -109,21 +114,23 @@ function CreateProfileForm (props) {
         <div>
           <label>Bio: </label>
           <input
-              type="textarea"
+              type="text"
               className="create-form"
               id="bio-input"
-              bio="bio"
+              name="bio"
               value={profileData.bio}
               onChange={handleChange}
-              required
             />
-        
-
 
         </div>
         <div className="btn">
           <button>Back:</button>
-          <button>Finish</button>
+          <button
+          type="submit"
+          className="btn-finish"
+          disabled={!validForm}
+          >
+            Finish</button>
         </div>
 
       </div>
