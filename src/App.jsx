@@ -50,7 +50,7 @@ const App = () => {
         />
         <Route 
           path="/create-profile"
-          element={<CreateProfile handleUpdateProfile={handleUpdateProfile}/>}
+          element={<CreateProfile handleUpdateProfile={handleUpdateProfile}/> }
           />
         <Route
           path="/login"
