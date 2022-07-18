@@ -9,6 +9,10 @@ function CreateProfileForm (props) {
     bio: "", 
 
   })
+  const handleChange = evt => {
+    setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
+    
+  }
   
   return(
     <>
@@ -23,7 +27,8 @@ function CreateProfileForm (props) {
               className="create-form"
               id="species-input"
               name="species"
-              // value={profileData.species}
+              value={profileData.species}
+              onChange={handleChange}
               required
             />
           <label>Who you want to date? :</label>
@@ -32,24 +37,27 @@ function CreateProfileForm (props) {
               className="create-form"
               id="species-input"
               name="species"
-              // value={profileData.species}
-              required
+              value={profileData.species}
+              onChange={handleChange}
+        
             />D E A D
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
               name="species"
-              // value={profileData.species}
-              required
+              value={profileData.species}
+              onChange={handleChange}
+
             /> HUMAN
             <input
               type="checkbox"
               className="create-form"
               id="species-input"
               name="species"
-              // value={profileData.species}
-              required
+              value={profileData.species}
+              onChange={handleChange}
+        
             /> HALFBIE
 
         </div>
@@ -60,7 +68,8 @@ function CreateProfileForm (props) {
               className="create-form"
               id="height-input"
               name="height"
-              // value={profileData.height}
+              value={profileData.height}
+              onChange={handleChange}
               required
             />
         </div>
@@ -71,7 +80,8 @@ function CreateProfileForm (props) {
               className="create-form"
               id="age-input"
               name="age"
-              // value={profileData.age}
+              value={profileData.age}
+              onChange={handleChange}
               required
             />
         </div>
@@ -82,17 +92,18 @@ function CreateProfileForm (props) {
               className="create-form"
               id="brains-input"
               name="brains"
-              // value={profileData.brains}
-              required
+              value={profileData.brains}
+              onChange={handleChange}
+
             />Yes
             <input
               type="checkbox"
               className="create-form"
               id="brains-input"
               name="brains"
-              // value={profileData.brains}
-              required
-            /> No
+              value={profileData.brains}
+              onChange={handleChange}
+              /> No
 
         </div>
         <div>
@@ -102,7 +113,8 @@ function CreateProfileForm (props) {
               className="create-form"
               id="bio-input"
               bio="bio"
-              // value={profileData.bio}
+              value={profileData.bio}
+              onChange={handleChange}
               required
             />
         
@@ -111,7 +123,7 @@ function CreateProfileForm (props) {
         </div>
         <div className="btn">
           <button>Back:</button>
-          <button>Submit</button>
+          <button>Finish</button>
         </div>
 
       </div>
