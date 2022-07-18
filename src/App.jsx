@@ -12,6 +12,8 @@ import * as profileService from "./services/profileService"
 import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
+import EditProfile from './pages/EditProfile/EditProfile'
+import LandingData from './pages/Landing/LandingData'
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -43,6 +45,7 @@ const App = () => {
 
   return (
     <>
+      {/* <LandingData /> */}
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -55,9 +58,14 @@ const App = () => {
           element={<CreateProfile handleUpdateProfile={handleUpdateProfile}/> }
           />
         <Route
+          path="edit-profile"
+          element={<EditProfile />}
+        />
+        { <Route  
           path="/messages"
           element={<Messages />}
-        />
+        /> }
+
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}

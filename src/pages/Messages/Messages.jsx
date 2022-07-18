@@ -6,9 +6,9 @@ const Messages = () => {
   const [messages, setMessages] = useState([])
 
   return (
-    <nav>
+    <div>
       <h1>Messages</h1>
-    </nav>
+    </div>
   )
 }
 
