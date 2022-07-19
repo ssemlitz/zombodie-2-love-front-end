@@ -14,6 +14,7 @@ import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
 import EditProfile from './pages/EditProfile/EditProfile'
 import LandingData from './pages/Landing/LandingData'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -57,6 +58,11 @@ const App = () => {
           path="/create-profile"
           element={<CreateProfile handleUpdateProfile={handleUpdateProfile}/> }
           />
+        <Route 
+          path="/profiles/:profileId"
+          element={<ProfilePage /> } 
+          />
+
         <Route
           path="edit-profile"
           element={<EditProfile />}

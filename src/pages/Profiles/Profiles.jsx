@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import DateCard from '../../components/DateCard/DateCard'
 import * as profileService from '../../services/profileService'
+import { Link } from 'react-router-dom'
+import ProfilePage from '../ProfilePage/ProfilePage'
+
 
 
 const Profiles = () => {
@@ -20,13 +23,15 @@ const Profiles = () => {
       {profiles.length ? 
         <>
           {profiles.map(profile =>
+          <Link to={`/profiles/${profile._id}`}>
+            {/* <ProfilePage key={profile._id}/> */}
             <div key={profile._id}>
               <DateCard key={profile._id} profile={profile}/>
             
               <h1>
-              {profile.name}
+              
               </h1> 
-              <p> Species: 
+              {/* <p> Species: 
               {profile.species}
               </p>
               <p> Do you eat brains?
@@ -54,11 +59,11 @@ const Profiles = () => {
               About Me: 
               <p>
               {profile.bio}
-              </p>
+              </p> */}
 
               </div>
 
-
+          </Link>
           )}
         </>
       :
