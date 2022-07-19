@@ -1,6 +1,6 @@
 import * as tokenService from '../services/tokenService'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/profiles`
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/edit-profile`
 
 async function create(profile) {
   const res = await fetch(BASE_URL, {
