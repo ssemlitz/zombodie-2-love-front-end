@@ -145,7 +145,7 @@ function EditProfile(props) {
               className="btn-finish"
               disabled={!profileForm}
             >
-              Finish</button>
+              Update</button>
           </div>
 
         </div>
