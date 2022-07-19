@@ -25,13 +25,13 @@ async function updateProfile(profile) {
     body: JSON.stringify(profile)
 
   })
-  return await res.json()
+  return  res.json()
 }
 
 
 async function getAll() {
   const res = await fetch(BASE_URL)
-  return await res.json()
+  return  res.json()
 }
 
 async function getAllProfiles() {

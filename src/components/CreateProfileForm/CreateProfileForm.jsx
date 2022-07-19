@@ -1,5 +1,6 @@
 import {useState, useRef, useEffect } from "react"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import {update} from "../../services/profileService"
 
 function CreateProfileForm (props) {
   const formElement = useRef()
@@ -18,16 +19,20 @@ function CreateProfileForm (props) {
 
   const handleChange = evt => {
     setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
-  
+    
   }
   const handleToggle = evt => {
     setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value })
+    console.log(profileData)
+  
   
   }
-
+  
+  const navigate = useNavigate()
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleUpdateProfile(profileData)
+    update(profileData)
+    navigate("/profiles")
   }
   
   useEffect(() => {
@@ -122,7 +127,7 @@ function CreateProfileForm (props) {
               id="brains-input"
               name="brains"
               value={profileData.brains}
-              onChange={handleChange}
+              onChange={handleToggle}
               /> No
 
         </div>
@@ -142,14 +147,13 @@ function CreateProfileForm (props) {
           <Link to="/signup">
           <button>Back:</button>
           </Link>
-          <Link to="/profiles">
+          
           <button
           type="submit"
           className="btn-finish"
           disabled={!validForm}
           >
             Finish</button>
-          </Link>
         </div>
 
       </div>
