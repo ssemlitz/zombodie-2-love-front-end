@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import DateCard from '../../components/DateCard/DateCard'
 import * as profileService from '../../services/profileService'
 
 
@@ -20,6 +21,8 @@ const Profiles = () => {
         <>
           {profiles.map(profile =>
             <div key={profile._id}>
+              <DateCard key={profile._id} profile={profile}/>
+            
               <h1>
               {profile.name}
               </h1> 
