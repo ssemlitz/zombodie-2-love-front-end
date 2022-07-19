@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import Logo from '../../assets/zombieapp-logo.png'
 import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
@@ -9,38 +9,31 @@ import { Box } from '@mui/system'
 
 function EditProfile(props) {
   const formElement = useRef()
-  const [profileForm, setProfileForm] = useState(false)
-  const [profileData, setProfileData] = useState({
-    species: "",
-    brains: false,
-    prefersZombie: false,
-    prefersHuman: false,
-    prefersHalfbie: false,
-    height: "",
-    bio: ""
-  })
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [validForm, setValidForm] = useState(false)
+  const [profileData, setProfileData] = useState(location.state.profile)
+  
+  useEffect(() => {
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [profileData])
 
   const handleChange = evt => {
     setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
-
   }
+
   const handleToggle = evt => {
     setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value })
     console.log(profileData)
-
-
   }
 
-  const navigate = useNavigate()
   const handleSubmit = evt => {
     evt.preventDefault()
     // update(profileData)
     navigate("/profiles")
   }
 
-  useEffect(() => {
-    formElement.current.checkValidity() ? setProfileForm(true) : setProfileForm(false)
-  }, [profileData])
+  
 
 
 
@@ -136,14 +129,14 @@ function EditProfile(props) {
 
           </div>
           <div className="btn">
-            <Link to="/">
+            <Link to="/profiles">
               <button>Cancel</button>
             </Link>
 
             <button
               type="submit"
               className="btn-finish"
-              disabled={!profileForm}
+              disabled={!validForm}
             >
               Update</button>
           </div>

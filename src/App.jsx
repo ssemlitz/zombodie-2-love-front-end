@@ -43,6 +43,12 @@ const App = () => {
     setProfiles([...profiles, newProfile])
   }
 
+  const handleEditProfile = async editedProfileFormData => {
+    const newProfilesArray = profiles.map(profile =>
+      profile._id === editedProfileFormData._id ? editedProfileFormData : profile
+    )
+  }
+
   return (
     <>
       {/* <LandingData /> */}
