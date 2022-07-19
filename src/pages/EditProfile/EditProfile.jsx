@@ -136,8 +136,8 @@ function EditProfile(props) {
 
           </div>
           <div className="btn">
-            <Link to="/signup">
-              <button>Back:</button>
+            <Link to="/">
+              <button>Cancel</button>
             </Link>
 
             <button
