@@ -13,7 +13,7 @@ import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
 import EditProfile from './pages/EditProfile/EditProfile'
-import LandingData from './pages/Landing/LandingData'
+
 
 const App = () => {
   const [profiles, setProfiles] = useState([])
@@ -47,11 +47,12 @@ const App = () => {
     const newProfilesArray = profiles.map(profile =>
       profile._id === editedProfileFormData._id ? editedProfileFormData : profile
     )
+    setProfiles(newProfilesArray)
+    navigate('/')
   }
 
   return (
     <>
-      {/* <LandingData /> */}
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -65,7 +66,7 @@ const App = () => {
           />
         <Route
           path="edit-profile"
-          element={<EditProfile />}
+          element={<EditProfile handleEditProfile={handleEditProfile} />}
         />
         { <Route  
           path="/messages"

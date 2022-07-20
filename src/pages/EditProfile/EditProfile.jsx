@@ -1,9 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
 import React from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
-import Logo from '../../assets/zombieapp-logo.png'
-import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button } from '@mui/material'
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from '@mui/system'
 
 
@@ -12,7 +9,8 @@ function EditProfile(props) {
   const location = useLocation()
   const navigate = useNavigate()
   const [validForm, setValidForm] = useState(false)
-  const [profileData, setProfileData] = useState(location.state.profile)
+  const [profileData, setProfileData] = useState({})
+  // console.log(location)
   
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -29,8 +27,8 @@ function EditProfile(props) {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    // update(profileData)
-    navigate("/profiles")
+    props.handleEditProfile(profileData)
+    navigate("/")
   }
 
   
