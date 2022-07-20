@@ -101,7 +101,7 @@ const Message = (props) => {
                   >
                     <span>{message.text}</span>
                     <br />
-                    <span>{format(message.createdAt)}</span>
+                    <span>{message.createdAt}</span>
                   </div>
                 ))}
               </div>
