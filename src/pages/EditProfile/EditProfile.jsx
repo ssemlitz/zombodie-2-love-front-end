@@ -9,8 +9,8 @@ function EditProfile(props) {
   const location = useLocation()
   const navigate = useNavigate()
   const [validForm, setValidForm] = useState(false)
-  const [profileData, setProfileData] = useState({})
-  // console.log(location)
+  const [profileData, setProfileData] = useState(location.state.props.profile)
+  console.log(location)
   
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)

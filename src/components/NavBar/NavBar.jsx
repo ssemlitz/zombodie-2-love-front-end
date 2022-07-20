@@ -7,7 +7,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import { Box } from '@mui/system'
 
 
-const NavBar = ({ user, handleLogout }) => {
+const NavBar = ({ user, handleLogout, profile }) => {
   const [anchorEl, setAnchorEl] = useState(null)
 
   const openMenu = Boolean(anchorEl)
@@ -63,7 +63,7 @@ const NavBar = ({ user, handleLogout }) => {
                     onClose={handleClose}
                     >
                       <Link to="/edit-profile">
-                        <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
+                        <MenuItem onClick={handleClose} profile={profile}>Edit Profile</MenuItem>
                       </Link>
                         <Link to="" onClick={handleLogout}>
                         <MenuItem onClick={handleClose}>Log Out</MenuItem>

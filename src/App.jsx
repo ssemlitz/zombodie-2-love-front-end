@@ -18,12 +18,16 @@ import EditProfile from './pages/EditProfile/EditProfile'
 const App = () => {
   const [profiles, setProfiles] = useState([])
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState({})
   const navigate = useNavigate()
   
   useEffect(() => {
     const fetchAllProfiles = async () => {
       const profileData = await profileService.getAll()
       setProfiles(profileData)
+      if (user) {
+        setProfile(profileData.find(item => item._id === user.profile))
+      }
     }
     fetchAllProfiles()
   }, [])
@@ -53,7 +57,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar state={profile} user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
