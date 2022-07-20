@@ -1,25 +1,38 @@
-import DateCard from '../../components/DateCard/DateCard'
-import { Link } from 'react-router-dom'
-
-
+import DateCard from "../../components/DateCard/DateCard";
+import { Link } from "react-router-dom";
 
 const Profiles = (props) => {
-
+  //props.profile.brains
+  const {profile,profiles} = props
+  const userPreference = (p)  => {
+    if (profile.prefersZombie && p.species === 'zombie') return true
+    if (profile.prefersHuman && p.species === 'human') return true
+    if (profile.prefersHalfbie && p.species === 'halfbie') return true
+    return false
+  }
+  const filter=profiles.filter((p) => {
+    return p.brains  ===  profile.brains
+      && userPreference(p)
+  })
+  console.log(profile)
+  console.log(filter)
   return (
     <>
       <h1>Potential Matches</h1>
-      {props.profiles.length ? 
+      {props.profiles.length ? (
         <>
-          {props.profiles.map(profile =>
-          <Link to={`/profiles/${profile._id}`} profiles={props.profiles} key={profile._id}>
-            {/* <ProfilePage key={profile._id}/> */}
-            <div key={profile._id}>
-              <DateCard key={profile._id} profile={profile}/>
-            
-              <h1>
-              
-              </h1> 
-              {/* <p> Species: 
+          {props.profiles.map((profile) => (
+            <Link
+              to={`/profiles/${profile._id}`}
+              profiles={props.profiles}
+              key={profile._id}
+            >
+              {/* <ProfilePage key={profile._id}/> */}
+              <div key={profile._id}>
+                <DateCard key={profile._id} profile={profile} />
+
+                <h1></h1>
+                {/* <p> Species: 
               {profile.species}
               </p>
               <p> Do you eat brains?
@@ -48,17 +61,15 @@ const Profiles = (props) => {
               <p>
               {profile.bio}
               </p> */}
-
               </div>
-
-          </Link>
-          )}
+            </Link>
+          ))}
         </>
-      :
+      ) : (
         <p>No profiles yet</p>
-      }
+      )}
     </>
-  )
-}
+  );
+};
 
-export default Profiles
+export default Profiles;
