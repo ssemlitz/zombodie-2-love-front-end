@@ -34,16 +34,8 @@ async function getAll() {
   return  res.json()
 }
 
-async function getDetails(profile) {
-  const res = await fetch(`${BASE_URL}/${profile._id}`, {
-    method: "GET",
-    headers: {
-      'Authorization': `Bearer ${tokenService.getToken()}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(profile)
-
-  })
+async function getDetails(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}`)
   return res.json()
 }
 

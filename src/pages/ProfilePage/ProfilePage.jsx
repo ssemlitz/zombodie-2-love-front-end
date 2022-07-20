@@ -9,10 +9,10 @@ const ProfilePage = (props) => {
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const profileData = await getDetails(location.state._id)
-      console.log(profileData, "HERE YOU GO SCOTT JUST FOR YOU")
+      const profileDetails = await getDetails(location.state._id)
+      console.log(profileDetails, "HERE YOU GO SCOTT JUST FOR YOU")
       console.log(location.state._id)
-      setProfileDetails(profileData)
+      setProfileDetails(profileDetails)
 
     }
     fetchDetails()
@@ -21,7 +21,9 @@ const ProfilePage = (props) => {
   return ( 
     <>
       <h1>Individual ProfileId
+        {profileDetails.name}
       </h1>
+      
     
       {/* <div>
         {props.profile.map (p =>
