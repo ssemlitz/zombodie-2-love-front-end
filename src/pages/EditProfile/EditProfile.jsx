@@ -12,7 +12,6 @@ function EditProfile(props) {
   const [validForm, setValidForm] = useState(false)
   console.log(location)
   const [profileData, setProfileData] = useState(location.state.profile)
-  console.log(profileData)
   
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -24,7 +23,6 @@ function EditProfile(props) {
 
   const handleToggle = evt => {
     setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value })
-    console.log(profileData)
   }
 
   const handleSubmit = async (evt) => {
