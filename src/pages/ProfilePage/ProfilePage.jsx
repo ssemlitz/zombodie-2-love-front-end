@@ -1,58 +1,56 @@
-import { useEffect } from "react"
-import { useState } from "react"
+import React from "react"
 import { useLocation } from "react-router-dom"
-import * as profileService from '../../services/profileService'
 
 const ProfilePage = (props) => {
-  const [profileDetails, setProfileDetails] = useState({})
-  console.log(props.profileDetails)
+  // const [profileDetails, setProfileDetails] = useState({})
+  // console.log(props.profileDetails)
   const location = useLocation()
-  console.log(location, "LOCATION")
+  // console.log(location, "LOCATION")
 
-  useEffect(() => {
-    const fetchDetails = async () => 
-    {
-      const profileData = await 
-      profileService.getDetails(location.state.profile)
-      setProfileDetails(profileData)
-    }
-    fetchDetails()
-  }, [location.state.profile])
+  // useEffect(() => {
+  //   const fetchDetails = async () => 
+  //   {
+  //     const profileData = await 
+  //     profileService.getDetails(location.state.profile)
+  //     setProfileDetails(profileData)
+  //   }
+  //   fetchDetails()
+  // }, [location.state.profile])
 
 
   return (
     <>
       <h1>Wanna Date me? </h1>
-      {props.profiles.name ? 
+      {location.props.profiles.name ? 
         <>        
           <p> Species: 
-              {props.profile.species}
+              {location.props.profiles.species}
               </p>
               <p> Do you eat brains?
-              {profileDetails.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
+              {props.profiles.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
               </p>
               <p> Prefer to date: 
-              {profileDetails.prefersZombie = true ? "Zombies" : profileDetails.prefersHalfbie = true ? "Halbies": profileDetails.prefersHuman = true ? "Humans" : "I ain't got no type"}
+              {props.profiles.prefersZombie = true ? "Zombies" : props.profiles.prefersHalfbie = true ? "Halbies": props.profiles.prefersHuman = true ? "Humans" : "I ain't got no type"}
               </p>
               <p>
-              {profileDetails.prefersHuman}
+              {props.profiles.prefersHuman}
 
               </p>
               <p>
-              {profileDetails.prefersHalfbie}
+              {props.profiles.prefersHalfbie}
               </p>
               <p>
-              {profileDetails.age} years old
+              {props.profiles.age} years old
 
               </p>
               height:
               <p>
-              {profileDetails.height}"
+              {props.profiles.height}"
 
               </p>
               About Me: 
               <p>
-              {profileDetails.bio}
+              {props.profiles.bio}
               </p> 
         </>
       :

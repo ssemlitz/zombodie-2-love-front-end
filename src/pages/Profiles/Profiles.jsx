@@ -1,19 +1,8 @@
-import { useState, useEffect } from 'react'
 import DateCard from '../../components/DateCard/DateCard'
-import * as profileService from '../../services/profileService'
 import { Link } from 'react-router-dom'
 
 
 const Profiles = (props) => {
-  //const [profiles, setProfiles] = useState([])
-
-  // useEffect(() => {
-  //   const fetchProfiles = async () => {
-  //     const profileData = await profileService.getAllProfiles()
-  //     setProfiles(profileData)
-  //   }
-  //   fetchProfiles()
-  // }, [])
 
   return (
     <>

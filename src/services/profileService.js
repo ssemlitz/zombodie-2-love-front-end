@@ -34,8 +34,8 @@ async function getAll() {
   return  res.json()
 }
 
-async function getDetails(profileId) {
-  const res = await fetch(`${BASE_URL}/${profileId}`)
+async function getDetails(profile) {
+  const res = await fetch(`${BASE_URL}/${profile._id}`)
   return res.json()
 
 }
