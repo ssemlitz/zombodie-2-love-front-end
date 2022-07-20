@@ -13,7 +13,6 @@ import './styles/App.css'
 import Matches from './pages/Matches/Matches'
 import Messages from './pages/Messages/Messages'
 import EditProfile from './pages/EditProfile/EditProfile'
-import LandingData from './pages/Landing/LandingData'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 const App = () => {
@@ -28,6 +27,7 @@ const App = () => {
     }
     fetchAllProfiles()
   }, [])
+
 
   const handleLogout = () => {
     authService.logout()
@@ -60,7 +60,7 @@ const App = () => {
           />
         <Route 
           path="/profiles/:profileId"
-          element={<ProfilePage /> } 
+          element={<ProfilePage profiles={profiles}/>} 
           />
 
         <Route
@@ -78,7 +78,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
+          element={user ? <Profiles profiles={profiles} /> : <Navigate to="/login" />}
         />
         <Route
           path="/matches"
