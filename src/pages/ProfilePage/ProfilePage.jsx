@@ -1,42 +1,59 @@
+import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom" 
+import { getDetails } from "../../services/profileService"
+
 const ProfilePage = (props) => {
+  console.log(props.profiles.profile._id)
+  const [ profileDetails, setProfileDetails] = useState({})
+  const location = useLocation()
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      const profileData = await getDetails(location.profiles.profile._id)
+      setProfileDetails(profileData)
+
+    }
+    fetchDetails()
+  }, [location.profiles.profile._id])
+  
   return ( 
     <>
       <h1>Individual ProfileId</h1>
     
       <div>
-        {props.profiles.map (profile => 
-        <div key={profile._id}>
+        {props.profile.map (p =>
+        <div key={p._id}>
           <p> Species: 
-              {profile.species}
+              {p.species}
               </p>
               <p> Do you eat brains?
-              {profile.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
+              {p.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
               </p>
               <p> Prefer to date: 
-              {profile.prefersZombie = true ? "Zombies" : profile.prefersHalfbie = true ? "Halbies": profile.prefersHuman = true ? "Humans" : "I ain't got no type"}
+              {p.prefersZombie = true ? "Zombies" : p.prefersHalfbie = true ? "Halbies": p.prefersHuman = true ? "Humans" : "I ain't got no type"}
               </p>
               <p>
-              {profile.prefersHuman}
+              {p.prefersHuman}
 
               </p>
               <p>
-              {profile.prefersHalfbie}
+              {p.prefersHalfbie}
               </p>
               <p>
-              {profile.age} years old
+              {p.age} years old
 
               </p>
               height:
               <p>
-              {profile.height}"
+              {p.height}"
 
               </p>
               About Me: 
               <p>
-              {profile.bio}
+              {p.bio}
               </p> 
-                :
-              <p>No info</p>
+                {/* :
+              <p>No info</p> */}
     
       </div>
 
