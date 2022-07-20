@@ -17,6 +17,7 @@ async function create(profile) {
 
 
 async function updateProfile(profile) {
+  console.log("****", profile) 
   const res = await fetch(`${BASE_URL}/${profile._id}`, {
     method: 'PUT',
     headers: {

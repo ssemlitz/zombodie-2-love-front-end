@@ -57,7 +57,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar state={profile} user={user} handleLogout={handleLogout} />
+      <NavBar profile={profile} user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route

@@ -1,4 +1,5 @@
 import React from 'react'
+import * as profileService from '../../services/profileService.js'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Box } from '@mui/system'
@@ -9,8 +10,9 @@ function EditProfile(props) {
   const location = useLocation()
   const navigate = useNavigate()
   const [validForm, setValidForm] = useState(false)
-  const [profileData, setProfileData] = useState(location.state.props.profile)
   console.log(location)
+  const [profileData, setProfileData] = useState(location.state.profile)
+  console.log(profileData)
   
   useEffect(() => {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
@@ -25,10 +27,11 @@ function EditProfile(props) {
     console.log(profileData)
   }
 
-  const handleSubmit = evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
-    props.handleEditProfile(profileData)
-    navigate("/")
+    const data = await profileService.update(profileData)
+    console.log(data)
+    navigate("/profiles")
   }
 
   
@@ -50,7 +53,7 @@ function EditProfile(props) {
               name="species"
               value={profileData.species}
               onChange={handleChange}
-              require
+              required
             />
             <label>Who you want to date? :</label>
             <input

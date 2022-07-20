@@ -62,8 +62,8 @@ const NavBar = ({ user, handleLogout, profile }) => {
                     open={openMenu}
                     onClose={handleClose}
                     >
-                      <Link to="/edit-profile">
-                        <MenuItem onClick={handleClose} profile={profile}>Edit Profile</MenuItem>
+                  <Link to="/edit-profile" state={{profile}}>
+                        <MenuItem onClick={handleClose}>Edit Profile</MenuItem>
                       </Link>
                         <Link to="" onClick={handleLogout}>
                         <MenuItem onClick={handleClose}>Log Out</MenuItem>
