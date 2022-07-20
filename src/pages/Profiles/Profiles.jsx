@@ -4,27 +4,29 @@ import { Link } from "react-router-dom";
 const Profiles = (props) => {
   //props.profile.brains
   const {profile,profiles} = props
-  const userPreference = (p)  => {
+  const removeSelf = (p) => p._id !== profile._id
+  const brainPreference = (p) => p.brains  ===  profile.brains
+  const speciesPreference = (p)  => {
     if (profile.prefersZombie && p.species === 'zombie') return true
     if (profile.prefersHuman && p.species === 'human') return true
     if (profile.prefersHalfbie && p.species === 'halfbie') return true
     return false
   }
-  const filter=profiles.filter((p) => {
-    return p.brains  ===  profile.brains
-      && userPreference(p)
-  })
+  const filter = profiles.filter((p) => 
+      brainPreference(p) && speciesPreference(p) && removeSelf(p)
+  )
+
   console.log(profile)
   console.log(filter)
   return (
     <>
       <h1>Potential Matches</h1>
-      {props.profiles.length ? (
+      {filter.length ? (
         <>
-          {props.profiles.map((profile) => (
+          {filter.map((profile) => (
             <Link
               to={`/profiles/${profile._id}`}
-              profiles={props.profiles}
+              profiles={filter}
               key={profile._id}
             >
               {/* <ProfilePage key={profile._id}/> */}

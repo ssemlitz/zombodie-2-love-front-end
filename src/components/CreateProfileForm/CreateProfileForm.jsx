@@ -31,6 +31,7 @@ function CreateProfileForm (props) {
   const navigate = useNavigate()
   const handleSubmit = evt => {
     evt.preventDefault()
+    console.log(props.user)
     update(profileData)
     navigate("/profiles")
   }
