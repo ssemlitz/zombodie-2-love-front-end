@@ -1,50 +1,48 @@
-const ProfilePage = (props) => {
+import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom" 
+import { getDetails } from "../../services/profileService"
+
+const ProfilePage = () => {
+  const [ profileDetails, setProfileDetails] = useState({})
+  const location = useLocation()
+  console.log('What is inside the location object?????', location)
+
+  useEffect(() => {
+    const fetchDetails = async () => {
+      const profileDetails = await getDetails(location.state._id)
+      setProfileDetails(profileDetails)
+
+    }
+    fetchDetails()
+  }, [location.state._id])
+  
   return ( 
     <>
-      <h1>Individual ProfileId</h1>
-    
-      <div>
-        {props.profiles.map (profile => 
-        <div key={profile._id}>
-          <p> Species: 
-              {profile.species}
-              </p>
-              <p> Do you eat brains?
-              {profile.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
-              </p>
-              <p> Prefer to date: 
-              {profile.prefersZombie = true ? "Zombies" : profile.prefersHalfbie = true ? "Halbies": profile.prefersHuman = true ? "Humans" : "I ain't got no type"}
-              </p>
-              <p>
-              {profile.prefersHuman}
+    <br/>
+    <br/>
+    <div className="profile-page">
 
-              </p>
-              <p>
-              {profile.prefersHalfbie}
-              </p>
-              <p>
-              {profile.age} years old
-
-              </p>
-              height:
-              <p>
-              {profile.height}"
-
-              </p>
-              About Me: 
-              <p>
-              {profile.bio}
-              </p> 
-                :
-              <p>No info</p>
-    
-      </div>
-
-
-      )}
+      <h1>{profileDetails.name}</h1>
+        <p> Species: 
+          {profileDetails.species} </p>
+        <p> Do you eat brains?
+          {profileDetails.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"} </p>
+        <p> Prefer to date: 
+          {profileDetails.prefersZombie = true ? "Zombies" : profileDetails.prefersHalfbie = true ? "Halbies": profileDetails.prefersHuman = true ? "Humans" : "I ain't got no type"}</p>
+        <p>
+          {profileDetails.prefersHuman}</p>
+        <p>
+          {profileDetails.prefersHalfbie}</p>
+        <p>
+          {profileDetails.age} years old </p>
+        <p>
+          height: {profileDetails.height} </p>
+        <p>
+          About Me: {profileDetails.bio} </p> 
     </div>
-
+      
     </>
+
   )
 }
 

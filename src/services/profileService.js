@@ -17,7 +17,6 @@ async function create(profile) {
 
 
 async function updateProfile(profile) {
-  console.log("****", profile) 
   const res = await fetch(`${BASE_URL}/${profile._id}`, {
     method: 'PUT',
     headers: {
@@ -32,14 +31,17 @@ async function updateProfile(profile) {
 
 async function getAll() {
   const res = await fetch(BASE_URL)
-  return  res.json()
-}
-
-async function getDetails(profile) {
-  const res = await fetch(`${BASE_URL}/${profile._id}`)
   return res.json()
-
 }
+
+async function getDetails(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/`, {
+    method: "GET"
+  })
+  return res.json()
+}
+
+
 async function getAllProfiles() {
   const res = await fetch(BASE_URL, {
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
