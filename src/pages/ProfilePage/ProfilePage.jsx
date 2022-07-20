@@ -3,24 +3,27 @@ import { useLocation } from "react-router-dom"
 import { getDetails } from "../../services/profileService"
 
 const ProfilePage = (props) => {
-  console.log(props.profiles.profile._id)
   const [ profileDetails, setProfileDetails] = useState({})
   const location = useLocation()
+  console.log('What is inside the location object?????', location)
 
   useEffect(() => {
     const fetchDetails = async () => {
-      const profileData = await getDetails(location.profiles.profile._id)
+      const profileData = await getDetails(location.state._id)
+      console.log(profileData, "HERE YOU GO SCOTT JUST FOR YOU")
+      console.log(location.state._id)
       setProfileDetails(profileData)
 
     }
     fetchDetails()
-  }, [location.profiles.profile._id])
+  }, [location.state._id])
   
   return ( 
     <>
-      <h1>Individual ProfileId</h1>
+      <h1>Individual ProfileId
+      </h1>
     
-      <div>
+      {/* <div>
         {props.profile.map (p =>
         <div key={p._id}>
           <p> Species: 
@@ -55,11 +58,11 @@ const ProfilePage = (props) => {
                 {/* :
               <p>No info</p> */}
     
-      </div>
+      {/* </div> */}
 
 
-      )}
-    </div>
+    {/* //   )} */}
+    {/* // </div> */} */
 
     </>
   )
