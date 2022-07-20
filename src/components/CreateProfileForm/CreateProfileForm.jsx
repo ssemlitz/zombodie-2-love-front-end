@@ -56,7 +56,7 @@ function CreateProfileForm (props) {
               name="species"
               value={profileData.species}
               onChange={handleChange}
-              require
+              required
               />
           <label>Who you want to date? :</label>
             <input

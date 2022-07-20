@@ -41,7 +41,6 @@ const App = () => {
     fetchAllProfiles();
   }, []);
 
-
   const handleLogout = () => {
     authService.logout();
     setUser(null);
@@ -57,9 +56,17 @@ const App = () => {
     setProfiles([...profiles, newProfile]);
   };
 
+  const handleEditProfile = async editedProfileFormData => {
+    const newProfilesArray = profiles.map(profile =>
+      profile._id === editedProfileFormData._id ? editedProfileFormData : profile
+    )
+    setProfiles(newProfilesArray)
+    navigate('/')
+  }
+
   return (
     <>
-      <NavBar user={user} handleLogout={handleLogout} />
+      <NavBar profile={profile} user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
@@ -71,11 +78,13 @@ const App = () => {
           element={<ProfilePage profiles={profiles}/>} 
           />
         <Route
+          path="edit-profile"
+          element={<EditProfile handleEditProfile={handleEditProfile} />}
+          />
+        <Route
           path="/create-profile"
           element={<CreateProfile handleUpdateProfile={handleUpdateProfile} />}
         />
-        <Route path="edit-profile" element={<EditProfile />} />
-
         <Route
           path="/login"
           element={<Login handleSignupOrLogin={handleSignupOrLogin} />}
