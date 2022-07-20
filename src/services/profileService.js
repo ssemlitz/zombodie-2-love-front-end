@@ -35,6 +35,11 @@ async function getAll() {
   return  res.json()
 }
 
+async function getDetails(profile) {
+  const res = await fetch(`${BASE_URL}/${profile._id}`)
+  return res.json()
+
+}
 async function getAllProfiles() {
   const res = await fetch(BASE_URL, {
     headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
@@ -59,4 +64,5 @@ export {
   create,
   getAll,
   updateProfile as update,
+  getDetails
 }
