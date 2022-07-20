@@ -1,29 +1,24 @@
-import { useState, useEffect } from 'react'
-import * as profileService from '../../services/profileService'
+import DateCard from '../../components/DateCard/DateCard'
+import { Link } from 'react-router-dom'
 
 
-const Profiles = () => {
-  const [profiles, setProfiles] = useState([])
-
-  useEffect(() => {
-    const fetchProfiles = async () => {
-      const profileData = await profileService.getAllProfiles()
-      setProfiles(profileData)
-    }
-    fetchProfiles()
-  }, [])
+const Profiles = (props) => {
 
   return (
     <>
       <h1>Potential Matches</h1>
-      {profiles.length ? 
+      {props.profiles.length ? 
         <>
-          {profiles.map(profile =>
+          {props.profiles.map(profile =>
+          <Link to={`/profiles/${profile._id}`} profiles={props.profiles} key={profile._id}>
+            {/* <ProfilePage key={profile._id}/> */}
             <div key={profile._id}>
+              <DateCard key={profile._id} profile={profile}/>
+            
               <h1>
-              {profile.name}
+              
               </h1> 
-              <p> Species: 
+              {/* <p> Species: 
               {profile.species}
               </p>
               <p> Do you eat brains?
@@ -51,11 +46,11 @@ const Profiles = () => {
               About Me: 
               <p>
               {profile.bio}
-              </p>
+              </p> */}
 
               </div>
 
-
+          </Link>
           )}
         </>
       :

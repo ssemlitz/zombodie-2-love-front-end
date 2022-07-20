@@ -12,7 +12,9 @@ import * as profileService from "./services/profileService";
 import "./styles/App.css";
 import Matches from "./pages/Matches/Matches";
 import EditProfile from "./pages/EditProfile/EditProfile";
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 import Chat from "./pages/Chat/Chat";
+
 
 const App = () => {
   const [profiles, setProfiles] = useState([]);
@@ -39,6 +41,7 @@ const App = () => {
     fetchAllProfiles();
   }, []);
 
+
   const handleLogout = () => {
     authService.logout();
     setUser(null);
@@ -63,6 +66,10 @@ const App = () => {
           path="/signup"
           element={<Signup handleSignupOrLogin={handleSignupOrLogin} />}
         />
+        <Route 
+          path="/profiles/:profileId"
+          element={<ProfilePage profiles={profiles}/>} 
+          />
         <Route
           path="/create-profile"
           element={<CreateProfile handleUpdateProfile={handleUpdateProfile} />}
@@ -75,7 +82,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles /> : <Navigate to="/login" />}
+          element={user ? <Profiles profiles={profiles} /> : <Navigate to="/login" />}
         />
         <Route path="/matches" element={<Matches />} />
         <Route
