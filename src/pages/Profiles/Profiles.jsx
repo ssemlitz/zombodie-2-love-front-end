@@ -1,7 +1,5 @@
-import DateCard from '../../components/DateCard/DateCard'
-import { Link } from 'react-router-dom'
-
-
+import DateCard from "../../components/DateCard/DateCard";
+import { Link } from "react-router-dom";
 
 const Profiles = (props) => {
 	return (
@@ -19,4 +17,5 @@ const Profiles = (props) => {
 	)
 }
 
-export default Profiles
+
+export default Profiles;
