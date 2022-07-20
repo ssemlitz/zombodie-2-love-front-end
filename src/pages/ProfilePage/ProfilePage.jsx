@@ -20,9 +20,26 @@ const ProfilePage = () => {
     <>
     <br/>
     <br/>
-      <h1>{profileDetails.name}
-      </h1>
-      <p></p>
+    <div className="profile-page">
+
+      <h1>{profileDetails.name}</h1>
+        <p> Species: 
+          {profileDetails.species} </p>
+        <p> Do you eat brains?
+          {profileDetails.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"} </p>
+        <p> Prefer to date: 
+          {profileDetails.prefersZombie = true ? "Zombies" : profileDetails.prefersHalfbie = true ? "Halbies": profileDetails.prefersHuman = true ? "Humans" : "I ain't got no type"}</p>
+        <p>
+          {profileDetails.prefersHuman}</p>
+        <p>
+          {profileDetails.prefersHalfbie}</p>
+        <p>
+          {profileDetails.age} years old </p>
+        <p>
+          height: {profileDetails.height} </p>
+        <p>
+          About Me: {profileDetails.bio} </p> 
+    </div>
       
     </>
 
