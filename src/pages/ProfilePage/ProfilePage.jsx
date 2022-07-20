@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom" 
 import { getDetails } from "../../services/profileService"
 
-const ProfilePage = (props) => {
+const ProfilePage = () => {
   const [ profileDetails, setProfileDetails] = useState({})
   const location = useLocation()
   console.log('What is inside the location object?????', location)
@@ -10,8 +10,6 @@ const ProfilePage = (props) => {
   useEffect(() => {
     const fetchDetails = async () => {
       const profileDetails = await getDetails(location.state._id)
-      console.log(profileDetails, "HERE YOU GO SCOTT JUST FOR YOU")
-      console.log(location.state._id)
       setProfileDetails(profileDetails)
 
     }
@@ -20,53 +18,14 @@ const ProfilePage = (props) => {
   
   return ( 
     <>
-      <h1>Individual ProfileId
-        {profileDetails.name}
+    <br/>
+    <br/>
+      <h1>{profileDetails.name}
       </h1>
+      <p></p>
       
-    
-      {/* <div>
-        {props.profile.map (p =>
-        <div key={p._id}>
-          <p> Species: 
-              {p.species}
-              </p>
-              <p> Do you eat brains?
-              {p.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"}
-              </p>
-              <p> Prefer to date: 
-              {p.prefersZombie = true ? "Zombies" : p.prefersHalfbie = true ? "Halbies": p.prefersHuman = true ? "Humans" : "I ain't got no type"}
-              </p>
-              <p>
-              {p.prefersHuman}
-
-              </p>
-              <p>
-              {p.prefersHalfbie}
-              </p>
-              <p>
-              {p.age} years old
-
-              </p>
-              height:
-              <p>
-              {p.height}"
-
-              </p>
-              About Me: 
-              <p>
-              {p.bio}
-              </p> 
-                {/* :
-              <p>No info</p> */}
-    
-      {/* </div> */}
-
-
-    {/* //   )} */}
-    {/* // </div> */} */
-
     </>
+
   )
 }
 
