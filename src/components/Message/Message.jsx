@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import * as profileService from "../../services/profileService";
 import Profiles from "../../pages/Profiles/Profiles";
 import { getMessages, addMessage } from "../../services/messageService";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import "./Message.css";
 import InputEmoji from "react-input-emoji";
 
