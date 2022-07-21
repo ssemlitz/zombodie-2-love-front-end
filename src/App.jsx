@@ -30,8 +30,10 @@ const App = () => {
         setProfile(profileData.find((item) => item._id === user.profile));
       }
     };
-    fetchProfiles();
-  }, []);
+    if(user) {
+      fetchProfiles();
+    }
+  }, [user]);
 
   useEffect(() => {
     const fetchAllProfiles = async () => {
@@ -69,6 +71,11 @@ const App = () => {
     navigate('/')
   }
 
+  const handleDeleteProfile = async (id) => {
+    const deletedProfile = await profileService.deleteOne(id)
+    setProfiles(profiles.filter((profile) => profile._id !== deletedProfile._id))
+  }
+
   return (
     <>
       <NavBar profile={profile} user={user} handleLogout={handleLogout} />
@@ -84,11 +91,11 @@ const App = () => {
           />
         <Route
           path="edit-profile"
-          element={<EditProfile handleEditProfile={handleEditProfile} />}
+          element={<EditProfile handleEditProfile={handleEditProfile} handleDeleteProfile={handleDeleteProfile}/>}
           />
         <Route
           path="/create-profile"
-          element={<CreateProfile user={user} handleUpdateProfile={handleUpdateProfile} />}
+          element={<CreateProfile user={user} handleUpdateProfile={handleUpdateProfile} setProfile={setProfile} />}
         />
         <Route
           path="/login"
