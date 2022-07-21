@@ -84,6 +84,16 @@ async function disliked(profileId, dislikedId) {
   return await res.json()
 }
 
+async function deleteOne(profileId) {
+  const res = await fetch(`${BASE_URL}/${profileId}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
+  return res.json()
+}
+
 export {
   getAllProfiles, 
   addPhoto,
@@ -92,5 +102,6 @@ export {
   updateProfile as update,
   getDetails,
   liked,
-  disliked
+  disliked,
+  deleteOne
 }
