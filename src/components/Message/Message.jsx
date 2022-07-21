@@ -80,7 +80,7 @@ const Message = (props) => {
   useEffect(() => {
     scroll.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
+  console.log(messages)
   return (
     <>
       <div className="message-container">
@@ -89,10 +89,10 @@ const Message = (props) => {
             <div className="message-header">{userData?.name}</div>
             <div className="message-box">
               <div className="message-body">
-                {messages.map((message) => (
+                {messages.map((message, idx) => (
                   <div
                     ref={scroll}
-                    key={message._id}
+                    key={idx}
                     className={
                       message.senderId === props.currentUserId
                         ? "message own"

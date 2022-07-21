@@ -37,7 +37,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
                   component="div">
                   <Box 
                     sx={{ display: "flex" }}>
-                    <Link to="/messages">
+                    <Link to="/chat">
                       <Typography 
                         sx={{ 
                           marginRight: "20px", 

@@ -1,6 +1,6 @@
 import * as tokenService from './tokenService'
 
-const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/chats`
+const BASE_URL = `${process.env.REACT_APP_BACK_END_SERVER_URL}/api/chat`
 
 async function userChats(id) {
   console.log(id)
@@ -13,6 +13,19 @@ async function userChats(id) {
   return res.json()
 }
 
+async function createChat(formData) {
+  const res = await fetch(`${BASE_URL}`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  return res.json()
+}
+
 export {
-  userChats
+  userChats,
+  createChat
 }

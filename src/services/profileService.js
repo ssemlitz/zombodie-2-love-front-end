@@ -60,11 +60,22 @@ async function addPhoto(photoData, profileId) {
   return await res.json()
 }
 
+async function liked(profileId, likedId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/likes/${likedId}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  return await res.json()
+}
+
 export {
   getAllProfiles, 
   addPhoto,
   create,
   getAll,
   updateProfile as update,
-  getDetails
+  getDetails,
+  liked
 }
