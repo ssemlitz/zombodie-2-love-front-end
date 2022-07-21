@@ -52,7 +52,6 @@ const App = () => {
   };
 
   const handleUpdateProfile = async (profileData) => {
-    console.log('LOOK AT ME',user);
     const newProfile = await profileService.update(profileData);
     setProfiles([...profiles, newProfile]);
   };
@@ -92,7 +91,7 @@ const App = () => {
         />
         <Route
           path="/profiles"
-          element={user ? <Profiles profiles={profiles} profile={profile}/> : <Navigate to="/login" />}
+          element={user ? <Profiles profiles={profiles} setProfile={setProfile} profile={profile}/> : <Navigate to="/login" />}
         />
         <Route path="/matches" element={<Matches />} />
         <Route
