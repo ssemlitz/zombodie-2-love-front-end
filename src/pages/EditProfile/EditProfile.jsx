@@ -58,6 +58,7 @@ function EditProfile(props) {
                 name="prefersZombie"
                 value={profileData.prefersZombie}
                 onChange={handleToggle}
+                checked={profileData.prefersZombie}
               />
               Zombie
               <input
@@ -67,7 +68,8 @@ function EditProfile(props) {
                 name="prefersHuman"
                 value={profileData.prefersHuman}
                 onChange={handleToggle}
-              />{" "}
+                checked={profileData.prefersHuman}
+              />
               Human
               <input
                 type="checkbox"
@@ -76,7 +78,8 @@ function EditProfile(props) {
                 name="prefersHalfbie"
                 value={profileData.prefersHalfbie}
                 onChange={handleToggle}
-              />{" "}
+                checked={profileData.prefersHalfbie}
+              />
               Halfbie
             </div>
             <div>
@@ -134,6 +137,10 @@ function EditProfile(props) {
               >
                 Update
               </button>
+              <Link to="/signup">
+                <button onClick={() => props.handleDeleteProfile(profileData._id)}>DELETE
+                </button>             
+              </Link>
             </div>
           </div>
         </form>
