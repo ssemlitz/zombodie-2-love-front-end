@@ -1,11 +1,12 @@
 import DateCard from "../../components/DateCard/DateCard";
-import { Link } from "react-router-dom";
 import * as profileService from "../../services/profileService"
 import { createChat } from "../../services/chatService";
 
 const Profiles = (props) => {
   const { profile, profiles } = props;
   const removeSelf = (p) => p._id !== profile._id;
+  const notInDisliked = (p) => !profile.disliked.includes(p._id)
+  const notInLiked = (p) => !profile.liked.includes(p._id)
   const brainPreference = (p) => p.brains === profile.brains;
   const speciesPreference = (p) => {
     if (profile.prefersZombie && p.species === "zombie") return true;
@@ -14,7 +15,7 @@ const Profiles = (props) => {
     return false;
   };
   const filter = profiles.filter(
-    (p) => brainPreference(p) && speciesPreference(p) && removeSelf(p)
+    (p) => brainPreference(p) && speciesPreference(p) && removeSelf(p) && notInDisliked(p) && notInLiked(p)
   );
   const handleLiked = async (profileId, potentialMatch) => {
     const res = await profileService.liked(profileId, potentialMatch._id) 
@@ -32,8 +33,8 @@ const Profiles = (props) => {
 
   const handleDisliked = async (profileId, potentialMatch) => {
     const res = await profileService.disliked(profileId, potentialMatch._id)
-    console.log("DISLIKED PERSON", res)
-    props.setProfile(res.myProfile)
+    console.log("MY UPDATED PROFILE", res)
+    props.setProfile(res)
   }
 
   console.log("THIS IS THE PROFILE HAYDEE", profile);
