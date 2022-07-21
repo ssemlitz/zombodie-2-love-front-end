@@ -9,9 +9,9 @@ const Profiles = (props) => {
   const notInLiked = (p) => !profile.liked.includes(p._id)
   const brainPreference = (p) => p.brains === profile.brains;
   const speciesPreference = (p) => {
-    if (profile.prefersZombie && p.species === "zombie") return true;
-    if (profile.prefersHuman && p.species === "human") return true;
-    if (profile.prefersHalfbie && p.species === "halfbie") return true;
+    if (profile.prefersZombie && p.species === "Zombie") return true;
+    if (profile.prefersHuman && p.species === "Human") return true;
+    if (profile.prefersHalfbie && p.species === "Halfbie") return true;
     return false;
   };
   const filter = profiles.filter(

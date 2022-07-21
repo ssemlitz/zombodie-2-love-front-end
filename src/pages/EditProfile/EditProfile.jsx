@@ -1,37 +1,40 @@
-import React from "react";
-import * as profileService from "../../services/profileService.js";
-import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { Box } from "@mui/system";
+import React from 'react'
+import * as profileService from '../../services/profileService.js'
+import { useState, useEffect, useRef } from 'react'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { Box } from '@mui/system'
+
 
 function EditProfile(props) {
-  const formElement = useRef();
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [validForm, setValidForm] = useState(false);
-  console.log(location);
-  const [profileData, setProfileData] = useState(location.state.profile);
-
+  const formElement = useRef()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [validForm, setValidForm] = useState(false)
+  console.log(location)
+  const [profileData, setProfileData] = useState(location.state.profile)
+  
   useEffect(() => {
-    formElement.current.checkValidity()
-      ? setValidForm(true)
-      : setValidForm(false);
-  }, [profileData]);
+    formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
+  }, [profileData])
 
-  const handleChange = (evt) => {
-    setProfileData({ ...profileData, [evt.target.name]: evt.target.value });
-  };
+  const handleChange = evt => {
+    setProfileData({ ...profileData, [evt.target.name]: evt.target.value })
+  }
 
-  const handleToggle = (evt) => {
-    setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value });
-  };
+  const handleToggle = evt => {
+    setProfileData({ ...profileData, [evt.target.name]: !!evt.target.value })
+  }
 
   const handleSubmit = async (evt) => {
-    evt.preventDefault();
-    const data = await profileService.update(profileData);
-    console.log(data);
-    navigate("/profiles");
-  };
+    evt.preventDefault()
+    const data = await profileService.update(profileData)
+    console.log(data)
+    navigate("/profiles")
+  }
+
+  
+
+
 
   return (
     <>
@@ -40,16 +43,18 @@ function EditProfile(props) {
         <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
           <div className="create-profile-form">
             <div>
-              <label>Species</label>
-              <input
-                type="text"
-                className="create-form"
-                id="species-input"
-                name="species"
-                value={profileData.species}
-                onChange={handleChange}
-                required
-              />
+            <label>Species required </label>
+          <select
+              type="text"
+              className="create-form"
+              id="species-input"
+              name="species"
+              onChange={handleChange}
+              required>
+                <option value={profileData.species="Human"}>Human</option>
+                <option value={profileData.species="Zombie"}>Zombie</option>
+                <option value={profileData.species="Halfbie"}>Halfbie</option>
+              </select>
               <label>Preferences:</label>
               <input
                 type="checkbox"
@@ -143,10 +148,13 @@ function EditProfile(props) {
               </Link>
             </div>
           </div>
-        </form>
-      </Box>
+      </form>
+
+    </Box>
     </>
-  );
+  )
+
 }
 
-export default EditProfile;
+
+export default EditProfile
