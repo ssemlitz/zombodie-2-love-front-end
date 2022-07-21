@@ -74,6 +74,7 @@ const App = () => {
   const handleDeleteProfile = async (id) => {
     const deletedProfile = await profileService.deleteOne(id)
     setProfiles(profiles.filter((profile) => profile._id !== deletedProfile._id))
+    handleLogout()
   }
 
   return (

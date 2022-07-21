@@ -142,10 +142,8 @@ function EditProfile(props) {
               >
                 Update
               </button>
-              <Link to="/signup">
                 <button onClick={() => props.handleDeleteProfile(profileData._id)}>DELETE
                 </button>             
-              </Link>
             </div>
           </div>
       </form>
