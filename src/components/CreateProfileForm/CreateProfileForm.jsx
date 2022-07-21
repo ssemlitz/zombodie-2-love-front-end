@@ -29,10 +29,11 @@ function CreateProfileForm (props) {
   }
   
   const navigate = useNavigate()
-  const handleSubmit = evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
     console.log(props.user)
-    update(profileData)
+    const updatedProfile = await update(profileData)
+    props.setProfile(updatedProfile)
     navigate("/profiles")
   }
   
