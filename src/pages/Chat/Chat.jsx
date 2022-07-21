@@ -15,7 +15,7 @@ const Chat = (props) => {
   const socket = useRef()
 
   useEffect(() => {
-    socket.current = io('http://localhost:3001')
+    socket.current = io(process.env.REACT_APP_BACK_END_SERVER_URL)
     if (props.profile._id) {
       socket.current.emit("new-profile-add", props.profile._id)
     }
@@ -41,14 +41,6 @@ const Chat = (props) => {
       socket.current.disconnect()
     }
   }, [])
-
-  
-
-  // const socket = io("http://localhost:3001")
-  // socket.on("connect", () => {
-  //   //create different rooms
-  //   console.log(socket.id)
-  // })
 
   useEffect(() => {
     const getChats = async() => {
