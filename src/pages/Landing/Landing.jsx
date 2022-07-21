@@ -1,14 +1,19 @@
-import styles from './Landing.module.css'
+import './Landing.css'
+import { Link } from 'react-router-dom'
+import LandingImg from '../../assets/Zombodie2Love-1.png'
 
-const Landing = ({ user }) => {
+
+const Landing = () => {
   return (
-    <main className={styles.container}>
-      <br />
-      <br />
-      <br />
-      <h1>hello, {user ? user.name : 'friend'}</h1>
-  
+    <>
+    <main className='container'>
+      <img src={LandingImg} alt="landing-logo" />
+      <div className="auth-links">
+      <button className="loginBtn"><Link to="/login">Log In</Link></button>
+      <button className="signUpBtn"><Link to="/signup">Sign Up</Link></button>
+      </div>
     </main>
+    </>
   )
 }
 
