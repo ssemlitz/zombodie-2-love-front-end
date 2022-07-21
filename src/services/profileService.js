@@ -70,6 +70,16 @@ async function liked(profileId, likedId) {
   return await res.json()
 }
 
+async function disliked(profileId, dislikedId) {
+  const res = await fetch(`${BASE_URL}/${profileId}/dislikes/${dislikedId}`, {
+    method: 'PUT',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    },
+  })
+  return await res.json()
+}
+
 export {
   getAllProfiles, 
   addPhoto,
@@ -77,5 +87,6 @@ export {
   getAll,
   updateProfile as update,
   getDetails,
-  liked
+  liked,
+  disliked
 }

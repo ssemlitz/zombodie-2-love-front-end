@@ -9,7 +9,7 @@ import ThumbDownRoundedIcon from "@mui/icons-material/ThumbDownRounded";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const DateCard = ({ profile, handleLiked, potentialMatch }) => {
+const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
   const [liked, setLiked] = useState([]);
   const [disliked, setDisliked] = useState([]);
 
@@ -17,9 +17,9 @@ const DateCard = ({ profile, handleLiked, potentialMatch }) => {
   //   handleLiked(profile._id, likedId);
   // };
 
-  const handleDisliked = () => {
-    console.log("Disliked!");
-  };
+  // const handleDisliked = () => {
+  //   console.log("Disliked!");
+  // };
 
   return (
     <Card sx={{ maxWidth: 345, marginTop: "200px" }}>
@@ -45,7 +45,7 @@ const DateCard = ({ profile, handleLiked, potentialMatch }) => {
             <ThumbUpAltRoundedIcon />
           </Button>
         </IconButton>
-        <Button size="small" onClick={handleDisliked}>
+        <Button size="small" onClick={() => handleDisliked(profile._id, potentialMatch)}>
           <ThumbDownRoundedIcon />
         </Button>
       </CardActions>

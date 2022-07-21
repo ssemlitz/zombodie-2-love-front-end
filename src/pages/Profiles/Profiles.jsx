@@ -28,7 +28,12 @@ const Profiles = (props) => {
       })
       console.log(chat)
     }
+  }
 
+  const handleDisliked = async (profileId, potentialMatch) => {
+    const res = await profileService.disliked(profileId, potentialMatch._id)
+    console.log("DISLIKED PERSON", res)
+    props.setProfile(res.myProfile)
   }
 
   console.log("THIS IS THE PROFILE HAYDEE", profile);
@@ -40,7 +45,7 @@ const Profiles = (props) => {
         <>
           {filter.map((p) => (
             <div key={p._id}>
-              <DateCard potentialMatch={p} handleLiked={handleLiked} profile={profile} />
+              <DateCard potentialMatch={p} handleLiked={handleLiked} handleDisliked={handleDisliked} profile={profile} />
             
             </div>
           ))}
