@@ -6,7 +6,7 @@ function CreateProfileForm (props) {
   const formElement = useRef()
   const [validForm, setValidForm] = useState(false)
   const [profileData, setProfileData] = useState({
-    species:["Human", "Zombie", "Halfbie"],
+    species:"Human",
     brains: false,
     prefersZombie: false, 
     prefersHuman: false, 
@@ -41,7 +41,7 @@ function CreateProfileForm (props) {
     formElement.current.checkValidity() ? setValidForm(true) : setValidForm(false)
   }, [profileData])
 
-
+console.log(profileData)
   
   return(
     <>
@@ -56,11 +56,11 @@ function CreateProfileForm (props) {
               className="create-form"
               id="species-input"
               name="species"
-              onChange={handleChange}
+              onChange={(evt) =>setProfileData({ ...profileData, species: evt.target.value })}
               required>
-                <option value={profileData.species="Human"}>Human</option>
-                <option value={profileData.species="Zombie"}>Zombie</option>
-                <option value={profileData.species="Halfbie"}>Halfbie</option>
+                <option value="Human">Human</option>
+                <option value="Zombie">Zombie</option>
+                <option value="Halfbie">Halfbie</option>
               </select>
           <label>Who you want to date? :</label>
             <input

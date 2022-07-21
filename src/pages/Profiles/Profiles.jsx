@@ -4,6 +4,7 @@ import { createChat } from "../../services/chatService";
 
 const Profiles = (props) => {
   const { profile, profiles } = props;
+  console.log(profiles)
   const removeSelf = (p) => p._id !== profile._id;
   const notInDisliked = (p) => !profile.disliked.includes(p._id)
   const notInLiked = (p) => !profile.liked.includes(p._id)
