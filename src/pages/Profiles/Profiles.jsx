@@ -46,7 +46,7 @@ const Profiles = (props) => {
           ))}
         </>
       ) : (
-        <p>No profiles yet</p>
+        <p>No Matches Yet!</p>
       )}
     </>
   );

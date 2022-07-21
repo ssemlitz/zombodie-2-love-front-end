@@ -1,8 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import * as profileService from "../../services/profileService";
-import Profiles from "../../pages/Profiles/Profiles";
 import { getMessages, addMessage } from "../../services/messageService";
-// import { format } from "timeago.js";
 import "./Message.css";
 import InputEmoji from "react-input-emoji";
 
@@ -86,7 +83,11 @@ const Message = (props) => {
       <div className="message-container">
         {props.chat ? (
           <>
-            <div className="message-header">{userData?.name}</div>
+            <div className="message-header">{userData?.name}
+              <div className="deleteChatBtn">
+                <button onClick={() => props.handleDeleteChat(props.chatId)}>Unmatch</button>
+              </div>
+            </div>
             <div className="message-box">
               <div className="message-body">
                 {messages.map((message, idx) => (
@@ -95,7 +96,7 @@ const Message = (props) => {
                     key={idx}
                     className={
                       message.senderId === props.currentUserId
-                        ? "message own"
+                        ? "message-own"
                         : "message"
                     }
                   >
