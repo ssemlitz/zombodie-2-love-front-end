@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Coustard:wght@400;900&family=Nixie+One&display=swap');
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-image: linear-gradient(to right top, #99c598, #8fbb8e, #85b084, #7ca67b, #729c71, #77a076, #7ca57c, #81a981, #97bd96, #add0ac, #c3e5c2, #daf9d9);
+  height: 100vh;
+  width: 100vw;
+}
+
+img {
+  height: 400px;
+  width: 700px;
+  object-fit: cover;
+}
+
+.container .signUpBtn {
+  background-color: #8B9943;
+  height: 35px;
+  width: 150px;
+  margin: 10px;
+  border:none;
+  border-radius: 15px;
+}
+
+.container .loginBtn {
+  background-color: #de7175;
+  height: 35px;
+  width: 150px;
+  margin: 10px;
+  border:none;
+  border-radius: 15px;
+}
+
+.container .signUpBtn a {
+  font-family: 'Alfa Slab One', cursive;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  color: #F9FBE7;
+}
+
+.container .loginBtn a {
+  font-family: 'Alfa Slab One', cursive;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  color: #FFF4F3;
+}

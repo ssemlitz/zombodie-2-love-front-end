@@ -25,7 +25,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
 
             <AppBar elevation={5} sx={{ backgroundColor: "#fff" }}>
               <Toolbar>
-                <Link to="/">
+                <Link to="/profiles">
                 <img src={Logo} alt="" id="logo" />
                 </Link>
                 <Box 
@@ -35,6 +35,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
                     width: "100%",
                   }} 
                   component="div">
+                    
                   <Box 
                     sx={{ display: "flex" }}>
                     <Link to="/chat">
@@ -89,9 +90,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
         // </nav>
       :
         <nav>
-          <img src={Logo} alt="" id="landing-logo" />
-          <Link to="/login">Log In</Link>
-          <Link to="/signup">Sign Up</Link>
+        
         </nav>
       }
     </>
