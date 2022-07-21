@@ -1,3 +1,4 @@
+import { ArrowDropDown } from "@mui/icons-material"
 import {useState, useRef, useEffect } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import {update} from "../../services/profileService"
@@ -50,15 +51,18 @@ function CreateProfileForm (props) {
     <div className="create-profile-form">
         <div>
           <label>Species required </label>
-            <input
+            <select
               type="text"
               className="create-form"
               id="species-input"
               name="species"
-              value={profileData.species}
               onChange={handleChange}
-              required
-              />
+              required>
+                <option value={profileData.species}>Human</option>
+                <option value={profileData.species}>Zombie</option>
+                <option value={profileData.species}>Halfbie</option>
+              </select>
+
           <label>Who you want to date? :</label>
             <input
               type="checkbox"
