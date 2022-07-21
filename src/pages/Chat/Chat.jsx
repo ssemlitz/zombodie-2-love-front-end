@@ -24,6 +24,7 @@ const Chat = (props) => {
     })
     socket.current.on("receive-message", (data) => {
       console.log("Data received in parent Chat.jsx", data)
+      data.createdAt = Date.now()
       setReceiveMessage(data)
     })
   }, [props.profile._id])

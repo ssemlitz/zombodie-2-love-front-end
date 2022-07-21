@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { getMessages, addMessage } from "../../services/messageService";
 import "./Message.css";
 import InputEmoji from "react-input-emoji";
+import {DateTime} from 'luxon'
 
 const Message = (props) => {
   const [userData, setUserData] = useState(null);
@@ -53,7 +54,10 @@ const Message = (props) => {
   };
 
   const handleSend = async (e) => {
-    e.preventDefault();
+    console.log(e);
+    if ("string" !== typeof e) {
+      e.preventDefault();
+    }
     const message = {
       senderId: props.currentUserId,
       text: newMessage,
@@ -102,19 +106,20 @@ const Message = (props) => {
                   >
                     <span>{message.text}</span>
                     <br />
-                    <span>{message.createdAt}</span>
+                    <span>{DateTime.fromISO(message.createdAt).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)}</span>
                   </div>
                 ))}
               </div>
-              <div className="chat-sender">
+              <form className="chat-sender" onSubmit={handleSend}>
                 <InputEmoji
                   value={newMessage}
                   onChange={handleChange}
+                  onEnter={handleSend}
                 ></InputEmoji>
-                <div className="send-button button" onClick={handleSend}>
+                <button type="submit" className="send-button button" onClick={handleSend}>
                   Send
-                </div>
-              </div>
+                </button>
+              </form>
             </div>
           </>
         ) : (
