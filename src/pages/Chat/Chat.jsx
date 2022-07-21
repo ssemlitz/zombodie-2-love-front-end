@@ -74,6 +74,7 @@ const Chat = (props) => {
               <div key={chat._id} onClick={() => setCurrentChat(chat)}>
                 <p>{chat._id}</p>
                 <Conversation key={idx} chat={chat} currentUserId={props.profile._id} profiles={props.profiles}/>
+
               </div>
             ))}
           </div>
@@ -82,7 +83,7 @@ const Chat = (props) => {
 
       <div className="Right-side-chat">
         
-        <Message chat={currentChat} currentUserId={props.profile._id} profiles={props.profiles} setSendMessage={setSendMessage} receiveMessage={receiveMessage}/>
+        <Message chat={currentChat} currentUserId={props.profile._id} profiles={props.profiles} setSendMessage={setSendMessage} receiveMessage={receiveMessage} handleDeleteChat={props.handleDeleteChat} />
       </div>
     </div>
 

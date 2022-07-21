@@ -25,7 +25,18 @@ async function createChat(formData) {
   return res.json()
 }
 
+async function deleteChat(chatId) {
+  const res = await fetch(`${BASE_URL}/${chatId}`, {
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`
+    }
+  })
+  return res.json()
+}
+
 export {
   userChats,
-  createChat
+  createChat,
+  deleteChat
 }

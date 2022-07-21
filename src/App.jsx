@@ -8,9 +8,9 @@ import Profiles from "./pages/Profiles/Profiles";
 import ChangePassword from "./pages/ChangePassword/ChangePassword";
 import CreateProfile from "./pages/CreateProfile/CreateProfile";
 import * as authService from "./services/authService";
-import * as profileService from "./services/profileService";
+import * as profileService from "./services/profileService"
+import * as chatService  from './services/chatService'
 import "./styles/App.css";
-import Matches from "./pages/Matches/Matches";
 import EditProfile from "./pages/EditProfile/EditProfile";
 import ProfilePage from './pages/ProfilePage/ProfilePage'
 import Chat from "./pages/Chat/Chat";
@@ -55,6 +55,11 @@ const App = () => {
     const newProfile = await profileService.update(profileData);
     setProfiles([...profiles, newProfile]);
   };
+  
+  const handleDeleteChat = async id =>  {
+    const deletedChat  =  await chatService.deleteChat(id)
+    setProfiles(profiles.filter(profile => profile._id !==  deletedChat._id))
+  }
 
   const handleEditProfile = async editedProfileFormData => {
     const newProfilesArray = profiles.map(profile =>
@@ -93,7 +98,6 @@ const App = () => {
           path="/profiles"
           element={user ? <Profiles profiles={profiles} setProfile={setProfile} profile={profile}/> : <Navigate to="/login" />}
         />
-        <Route path="/matches" element={<Matches />} />
         <Route
           path="/changePassword"
           element={
@@ -108,7 +112,7 @@ const App = () => {
           path="/chat"
           element={
             user ? (
-              <Chat profiles={profiles} profile={profile} />
+              <Chat profiles={profiles} profile={profile} handleDeleteChat={handleDeleteChat} />
             ) : (
               <Navigate to="/" />
             )

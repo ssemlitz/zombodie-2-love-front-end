@@ -25,18 +25,18 @@ const ProfilePage = () => {
       <h1>{profileDetails.name}</h1>
         <p> Species: 
           {profileDetails.species} </p>
-        <p> Do you eat brains?
-          {profileDetails.brains = true ? "yes, I eat brains" : "do not prefer to eat brains"} </p>
-        <p> Prefer to date: 
-          {profileDetails.prefersZombie = true ? "Zombies" : profileDetails.prefersHalfbie = true ? "Halbies": profileDetails.prefersHuman = true ? "Humans" : "I ain't got no type"}</p>
+        <p> Do You Eat Brains?
+          {profileDetails.brains = true ? "Yes" : "No"} </p>
+        <p> Preferences: 
+          {profileDetails.prefersZombie = true ? "Zombies" : profileDetails.prefersHalfbie = true ? "Halfbies": profileDetails.prefersHuman = true ? "Humans" : "No Preferences"}</p>
         <p>
           {profileDetails.prefersHuman}</p>
         <p>
           {profileDetails.prefersHalfbie}</p>
         <p>
-          {profileDetails.age} years old </p>
+          Age: {profileDetails.age} </p>
         <p>
-          height: {profileDetails.height} </p>
+          Height(inches): {profileDetails.height} </p>
         <p>
           About Me: {profileDetails.bio} </p> 
     </div>
