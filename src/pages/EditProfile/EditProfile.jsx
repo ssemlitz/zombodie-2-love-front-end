@@ -148,8 +148,6 @@ function EditProfile(props) {
               </Link>
             </div>
           </div>
-
-
       </form>
 
     </Box>
