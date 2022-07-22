@@ -78,7 +78,7 @@ const App = () => {
   }
 
   return (
-    <>
+    <><div className="App">
       <NavBar profile={profile} user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -127,6 +127,7 @@ const App = () => {
           }
         />
       </Routes>
+      </div>
     </>
   );
 };
