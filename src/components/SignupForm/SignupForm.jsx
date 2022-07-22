@@ -106,12 +106,12 @@ const SignupForm = props => {
         />
       </div>
       <div className="input-btn">
-          <button disabled={isFormInvalid()} className="signup-form-btn">
-            Sign Up
-          </button>
         <Link to="/">
           <button className='cancel-btn'>Cancel</button>
         </Link>
+          <button disabled={isFormInvalid()} className="signup-form-btn">
+            Sign Up
+          </button>
       </div>
     </form>
   )
