@@ -1,6 +1,7 @@
 
 
 # **Zombodie2Love**
+![Landing Page Image](/src/assets/zombodie-2-love-landing.png)
 <img src="">
 <p> 98% of us will be involved in a zombie apocalypse at some point in our lives. Everyone knows that the biggest obstacle during a zombie apocalypse isn’t surviving, but finding love. We are here to solve that problem with Zombodie-2-Love; the first dating app to bring humans and zombies together. It is 20-whenever this is happening, and we won’t judge you for who you’re interested in. We don’t fully know the legality of it, but who cares? You can now match with and talk to humans and zombies in real-time. Go on cute dates such as, hoarding all the food in your local supermarket, slow-walks on the beach, or just eating your neighbors as a romantic meal. With Zombodie-2-Love, we are bringing everyone together!
 </p>
@@ -61,7 +62,13 @@ Our app allows users to view potential matches
 
 𐄂 Be able to rate any date from 1-5, leaving a comment  and have the comment be visible to other users, but not visible to that particular user( person we went on date with)
 
-𐄂 Display cards individually and disappear after clicking liked or disliked. 
+𐄂 Display cards individually and disappear after swiping left or right. 
+
+𐄂 Add notifications when finding a match. 
+
+𐄂 Include an unmatch feature in the chats section. 
+
+𐄂 Create a search/filter page for potential matches.  
 
 ----
 ###  ✨ Credits ✨
