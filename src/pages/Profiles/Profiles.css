@@ -1,6 +1,9 @@
-/* main {
-  background-color: #F8F5E5;
-  height: 100vh;
+.pm-container {
   width: 100vw;
-
-} */
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-image: linear-gradient(to top, #dba9bd, #bf93af, #a07ea2, #806b94, #5d5985);
+}
