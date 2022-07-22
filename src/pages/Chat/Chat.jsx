@@ -4,6 +4,7 @@ import {userChats} from '../../services/chatService.js'
 import {io} from 'socket.io-client'
 import Conversation from '../../components/Conversation/Conversation'
 import Message from '../../components/Message/Message'
+import './Chat.css'
 import { DateTime } from 'luxon'
 
 const Chat = (props) => {
