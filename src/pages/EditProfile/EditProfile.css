@@ -28,10 +28,18 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.btn-delete {
+
+.delete-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn {
   background-color: #826ECC;
     height: 30px;
-    width: 80px;
+    width: 200px;
     margin: 10px;
     border: none;
     border-radius: 15px;
@@ -42,7 +50,6 @@
 }
 
 .btn-finish {
-
   background-color: #826ECC;
     height: 30px; 
     width: 80px;
@@ -56,26 +63,32 @@
 }
 
 .btn-cancel {
-  background-color: #826ECC;
+  background-color: #E5D0F8;
   height: 30px;
   width: 80px;
   margin: 10px;
   border: none;
   border-radius: 15px;
-  color: #f9f5e6;
+  color: #826ECC;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  
-
 }
-.btns h2 {
+
+.edit-btns {
+  display: flex;
+  justify-content: center;
+}
+
+.delete-profile h2 {
+ 
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: italic;
-    font-size: 36px;
+    font-size: 20px;
     margin-bottom: 0px;
     color:#6246CB;
     padding: 20px;
+    display: inline;
 }
 
 .edit-profile-form {
@@ -115,20 +128,18 @@ input[type = checkbox]{
 
 }
 
-.bio {
+.edit-bio {
   display: flex;
     justify-content: center;
-    font-size: 15px;
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     padding: 15px;
     justify-content: space-evenly;
 }
 
-.height {
+.edit-height {
   display: flex;
     justify-content: center;
-    font-size: 15px;
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     padding: 15px;
@@ -141,13 +152,11 @@ button {
   justify-content: space-evenly;
 }
 
-textarea {
+.edit-profile.form textarea {
   border-radius: 10px;
-  background-color: #e9d5f9;
 }
 
 .create-text {
   border-radius: 10px;
-  background-color:#e9d5f9
 
 }

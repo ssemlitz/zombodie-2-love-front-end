@@ -1,19 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .nav-img img {
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     object-fit: cover;
-}
-
-.nav-bar  {
-    width: 100vw;
 }
 
 div .nav-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .nav-links {
@@ -31,6 +27,7 @@ div .nav-bar {
 
 .nav-bar button  {
     all: unset;
+    margin: 10px;
 }
 
 .nav-bar a  {

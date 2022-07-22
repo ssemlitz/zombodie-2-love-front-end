@@ -38,8 +38,8 @@ const NavBar = ({ user, handleLogout, profile }) => {
                 <button>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="20"
+                    height="20"
                     fill="black"
                     className="bi bi-pencil-square"
                     viewBox="0 0 16 16"
@@ -56,8 +56,8 @@ const NavBar = ({ user, handleLogout, profile }) => {
                 <button>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
+                    width="20"
+                    height="20"
                     fill="black"
                     className="bi bi-box-arrow-right"
                     viewBox="0 0 16 16"

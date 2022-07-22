@@ -18,20 +18,22 @@ img {
 
 .landing-container .signUpBtn {
   background-color: #286F6C;
-  height: 35px;
-  width: 100px;
+  height: 50px;
+  width: 150px;
   margin: 10px;
   border:none;
   border-radius: 15px;
+  font-size: 20px;
 }
 
 .landing-container .loginBtn {
   background-color: #F5886B;
-  height: 35px;
-  width: 100px;
+  height: 50px;
+  width: 150px;
   margin: 10px;
   border:none;
   border-radius: 15px;
+  font-size: 20px;
 }
 
 .landing-container .signUpBtn a {
