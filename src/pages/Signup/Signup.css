@@ -10,7 +10,7 @@
   width: 100vw;
 }
 
-h1 {
+.signup-container h1 {
   font-family:'Judson', serif;
   font-weight: 900;
   font-style: italic;
@@ -19,8 +19,9 @@ h1 {
   color: #06330E;
 }
 
-span  {
-  color:  #fcc2bd;
+span {
+  color:  #FDC2BC;
+  text-shadow: 0 0 3px #FFE8E2;
 }
 
 

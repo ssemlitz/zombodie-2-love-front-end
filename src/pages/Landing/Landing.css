@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.container {
+.landing-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,7 @@ img {
   object-fit: cover;
 }
 
-.container .signUpBtn {
+.landing-container .signUpBtn {
   background-color: #286F6C;
   height: 35px;
   width: 100px;
@@ -25,7 +25,7 @@ img {
   border-radius: 15px;
 }
 
-.container .loginBtn {
+.landing-container .loginBtn {
   background-color: #F5886B;
   height: 35px;
   width: 100px;
@@ -34,16 +34,14 @@ img {
   border-radius: 15px;
 }
 
-.container .signUpBtn a {
+.landing-container .signUpBtn a {
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.5px;
   text-decoration: none;
   color: #F9FBE7;
 }
 
-.container .loginBtn a {
+.landing-container .loginBtn a {
   font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1.5px;
   text-decoration: none;
   color: #FFF4F3;
 }
