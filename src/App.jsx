@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
+// import NavBar from "./components/NavBar/NavBar";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Landing from "./pages/Landing/Landing";
@@ -79,7 +79,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar profile={profile} user={user} handleLogout={handleLogout} />
+      {/* <NavBar profile={profile} user={user} handleLogout={handleLogout} /> */}
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route

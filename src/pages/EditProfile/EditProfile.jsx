@@ -3,6 +3,7 @@ import * as profileService from '../../services/profileService.js'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { Box } from '@mui/system'
+import "./EditProfile.css";
 
 
 function EditProfile(props) {
@@ -37,119 +38,132 @@ function EditProfile(props) {
 
 
   return (
-    <>
-      <Box sx={{ marginTop: "150px" }}>
-        <h1>Edit Your Profile</h1>
-        <form autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
-          <div className="create-profile-form">
-            <div>
-            <label>Species required </label>
-          <select
-              type="text"
-              className="create-form"
-              id="species-input"
-              name="species"
-              onChange={handleChange}
-              required>
-                <option value={profileData.species="Human"}>Human</option>
-                <option value={profileData.species="Zombie"}>Zombie</option>
-                <option value={profileData.species="Halfbie"}>Halfbie</option>
-              </select>
-              <label>Preferences:</label>
-              <input
-                type="checkbox"
-                className="create-form"
-                id="species-input"
-                name="prefersZombie"
-                value={profileData.prefersZombie}
-                onChange={handleToggle}
-                checked={profileData.prefersZombie}
-              />
-              Zombie
-              <input
-                type="checkbox"
-                className="create-form"
-                id="species-input"
-                name="prefersHuman"
-                value={profileData.prefersHuman}
-                onChange={handleToggle}
-                checked={profileData.prefersHuman}
-              />
-              Human
-              <input
-                type="checkbox"
-                className="create-form"
-                id="species-input"
-                name="prefersHalfbie"
-                value={profileData.prefersHalfbie}
-                onChange={handleToggle}
-                checked={profileData.prefersHalfbie}
-              />
-              Halfbie
-            </div>
-            <div>
-              <label>Height(inches): </label>
-              <input
-                type="text"
-                className="create-form"
-                id="height-input"
-                name="height"
-                value={profileData.height}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <label>Do You Eat Brains? </label>
-              <input
-                type="checkbox"
-                className="create-form"
-                id="brains-input"
-                name="brains"
-                value={profileData.brains}
-                onChange={handleToggle}
-              />
-              Yes
-              <input
-                type="checkbox"
-                className="create-form"
-                id="brains-input"
-                name="brains"
-                value={profileData.brains}
-                onChange={handleToggle}
-              />{" "}
-              No
-            </div>
-            <div>
-              <label>Bio: </label>
-              <textarea
-                autoComplete="off"
-                className="create-form"
-                id="bio-input"
-                name="bio"
-                value={profileData.bio}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="btn">
-              <Link to="/profiles">
-                <button>Cancel</button>
-              </Link>
+    <main className='edit-body'>
 
-              <button
-                type="submit"
-                className="btn-finish"
-                disabled={!validForm}
-              >
-                Update
-              </button>
-                <button onClick={() => props.handleDeleteProfile(profileData._id)}>DELETE
-                </button>             
-            </div>
-          </div>
-      </form>
+        <Box sx={{ marginTop: "150px" }}>
+          <h1>Edit Your Profile</h1>
+          <form className="edit-profile-form" autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
+            <div >
+              <div>
+              <label className='sp'>
+              <b>Species required</b> 
+                <select
+                  type="text"
+                  className="create-form"
+                  id="species-input"
+                  name="species"
+                  onChange={handleChange}
+                  required>
+                    <option value={profileData.species="Human"}>Human</option>
+                    <option value={profileData.species="Zombie"}>Zombie</option>
+                    <option value={profileData.species="Halfbie"}>Halfbie</option>
+                  </select>
+              </label>
+                <label className='check-input'>
+                <b>Preferences:</b>
+                  <input
+                    type="checkbox"
+                    className="create-form-type"
+                    id="species-input"
+                    name="prefersZombie"
+                    value={profileData.prefersZombie}
+                    onChange={handleToggle}
+                    checked={profileData.prefersZombie}
+                  />Zombie
+                  
+                  <input
+                    type="checkbox"
+                    className="create-form"
+                    id="species-input"
+                    name="prefersHuman"
+                    value={profileData.prefersHuman}
+                    onChange={handleToggle}
+                    checked={profileData.prefersHuman}
+                  />
+                  Human
+                  <input
+                    type="checkbox"
+                    className="create-form"
+                    id="species-input"
+                    name="prefersHalfbie"
+                    value={profileData.prefersHalfbie}
+                    onChange={handleToggle}
+                    checked={profileData.prefersHalfbie}
+                  />
+                  Halfbie
 
-    </Box>
-    </>
+                </label>
+              </div>
+              <div>
+                <label className='height'>
+                <b>Height(inches): </b> 
+                  <input
+                    type="text"
+                    className="create-text"
+                    id="height-input"
+                    name="height"
+                    value={profileData.height}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div>
+                <label className='check-input'>
+                <b>Do You Eat Brains?</b>
+                <input
+                  type="checkbox"
+                  className="create-form"
+                  id="brains-input"
+                  name="brains"
+                  value={profileData.brains}
+                  onChange={handleToggle}
+                />
+                Yes
+                <input
+                  type="checkbox"
+                  className="create-form"
+                  id="brains-input"
+                  name="brains"
+                  value={profileData.brains}
+                  onChange={handleToggle}
+                />{" "}
+                No
+              </label>
+              </div>
+              <div>
+                <label className='bio'>
+                <b>Bio</b>
+                  <textarea
+                    autoComplete="off"
+                    className="create-form"
+                    id="bio-input"
+                    name="bio"
+                    value={profileData.bio}
+                    onChange={handleChange}
+                  />
+                </label>
+              </div>
+              <div className='btns'>
+                <Link to="/profiles">
+                  <button className="btn-cancel">Cancel</button>
+                </Link>
+
+                <button
+                  type="submit"
+                  className="btn-finish"
+                  disabled={!validForm}
+                >
+                  Update
+                </button>
+                <h2> I Found Zombodie2Love .... </h2>
+                  <button className='btn-delete' onClick={() => props.handleDeleteProfile(profileData._id)}>Delete
+                  </button>             
+              </div>
+            </div>
+        </form>
+
+      </Box>
+    </main>
   )
 
 }

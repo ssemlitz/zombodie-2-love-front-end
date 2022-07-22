@@ -1,6 +1,3 @@
-import ThumbDownRoundedIcon from "@mui/icons-material/ThumbDownRounded";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Link } from "react-router-dom";
 import "./DateCard.css";
 import ImgCard from "../../assets/Zombodie2Love-1 (1).png";
 
