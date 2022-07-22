@@ -20,8 +20,6 @@ const Message = (props) => {
 
   useEffect(() => {
     const userId = props.chat?.members.find((id) => id !== props.currentUserId);
-    console.log(props.currentUserId);
-    console.log(userId);
     const getUserData = async () => {
       try {
         const data = await props.profiles.find((profile) => {
@@ -54,7 +52,6 @@ const Message = (props) => {
   };
 
   const handleSend = async (e) => {
-    console.log(e);
     if ("string" !== typeof e) {
       e.preventDefault();
     }
@@ -81,7 +78,7 @@ const Message = (props) => {
   useEffect(() => {
     scroll.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-  console.log(messages)
+
   return (
     <>
       <div className="message-container">

@@ -6,7 +6,7 @@ import LandingImg from '../../assets/Zombodie2Love-1.png'
 const Landing = () => {
   return (
     <>
-    <main className='container'>
+    <main className='landing-container'>
       <img src={LandingImg} alt="landing-logo" />
       <div className="auth-links">
       <button className="loginBtn"><Link to="/login">Log In</Link></button>

@@ -12,11 +12,12 @@ import "./DateCard.css"
 const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
 
   return (
+    <div className="date-cards">
     <Card sx={{ maxWidth: 345, marginTop: "200px" }}>
       <CardMedia component="img" height="140" image={Logo} alt="" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          <Link
+          <Link state={profile}
             to={`/profiles/${potentialMatch._id}`}
           >
             {potentialMatch.name}
@@ -38,6 +39,7 @@ const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 };
 
