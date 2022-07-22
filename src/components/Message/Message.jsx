@@ -84,11 +84,11 @@ const Message = (props) => {
       <div className="message-container">
         {props.chat ? (
           <>
-            <div className="message-header">{userData?.name}
+            {/* <div className="message-header">{userData?.name}
               <div className="deleteChatBtn">
                 <button onClick={() => props.handleDeleteChat(props.chatId)}>Unmatch</button>
               </div>
-            </div>
+            </div> */}
             <div className="message-box">
               <div className="message-body">
                 {messages.map((message, idx) => (
