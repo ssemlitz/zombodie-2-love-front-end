@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: radial-gradient(circle, #f5886b, #fd988a, #ffa9a6, #ffbbc0, #ffced6, #f2cada, #e3c7db, #d4c4d9, #aaadc9, #7999b3, #4a8594, #286f6c);
+  background-image: radial-gradient(circle, #f5886b, #f9907d, #fc998e, #fea39e, #ffadad, #feb3b7, #fdb9c0, #fcbfc8, #fac2cd, #f7c4d2, #f5c7d6, #f2cada);
   height: 100vh;
   width: 100vw;
 }
