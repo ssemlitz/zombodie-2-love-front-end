@@ -41,9 +41,7 @@ const Profiles = (props) => {
 
 
   return (
-    <>
     <main>
-        <h1>Potential Matches</h1>
         {filter.length ? (
           <>
             {filter.map((p) => (
@@ -57,7 +55,6 @@ const Profiles = (props) => {
           <p>No Matches Yet!</p>
         )}
     </main>
-    </>
   );
 };
 
