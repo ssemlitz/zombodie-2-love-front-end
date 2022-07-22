@@ -2,13 +2,12 @@
 
 # **Zombodie2Love**
 ![Landing Page Image](/src/assets/zombodie-2-love-landing.png)
-<img src="">
+
 <p> 98% of us will be involved in a zombie apocalypse at some point in our lives. Everyone knows that the biggest obstacle during a zombie apocalypse isn’t surviving, but finding love. We are here to solve that problem with Zombodie-2-Love; the first dating app to bring humans and zombies together. It is 20-whenever this is happening, and we won’t judge you for who you’re interested in. We don’t fully know the legality of it, but who cares? You can now match with and talk to humans and zombies in real-time. Go on cute dates such as, hoarding all the food in your local supermarket, slow-walks on the beach, or just eating your neighbors as a romantic meal. With Zombodie-2-Love, we are bringing everyone together!
 </p>
 
 ## ⇢ <a href="https://zombodie-2-love.netlify.app/">Ready to find love ? </a> ⇠
 Our app allows users to view potential matches 
-<img src="">
 
 
 -----------------
