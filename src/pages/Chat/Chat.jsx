@@ -4,6 +4,7 @@ import {userChats} from '../../services/chatService.js'
 import {io} from 'socket.io-client'
 import Conversation from '../../components/Conversation/Conversation'
 import Message from '../../components/Message/Message'
+import { DateTime } from 'luxon'
 
 const Chat = (props) => {
   const [chats, setChats] = useState([])
@@ -24,7 +25,7 @@ const Chat = (props) => {
     })
     socket.current.on("receive-message", (data) => {
       console.log("Data received in parent Chat.jsx", data)
-      data.createdAt = Date.now()
+      data.createdAt = DateTime.now().toISO()
       setReceiveMessage(data)
     })
   }, [props.profile._id])

@@ -103,10 +103,7 @@ const Message = (props) => {
                   >
                     <span>{message.text}</span>
                     <br />
-                    {message.senderId === props.currentUserId &&
-                    <span>{DateTime.fromISO(message.createdAt).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)}</span>                                   
-                    }
-
+                    <span>{DateTime.fromISO(message.createdAt).toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS)}</span>
                   </div>
                 ))}
               </div>
