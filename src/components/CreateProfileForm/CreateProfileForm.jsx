@@ -137,6 +137,7 @@ function CreateProfileForm(props) {
             autoComplete="off"
             id="bio-input"
             name="bio"
+            maxLength='200'
             value={profileData.bio}
             onChange={handleChange}
           />
