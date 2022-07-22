@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: linear-gradient(to left bottom, #668a72, #6d9079, #759680, #7c9d87, #84a38e, #8daa96, #96b29d, #9fb9a5, #acc3af, #b9ccb9, #c5d6c3, #d2e0ce);
+  background-image: linear-gradient(to right bottom, #759680, #89a48d, #9db29b, #b0c0aa, #c3ceba, #c6d0bd, #c9d3c1, #ccd5c4, #c0ccbb, #b4c2b3, #a9b9ab, #9db0a3);
   height: 100vh;
   width: 100vw;
 }
@@ -20,7 +20,7 @@
 }
 
 span {
-  color:  #FDC2BC;
+  color:  #D8A5B2;
   text-shadow: 0 0 3px #FFE8E2;
 }
 

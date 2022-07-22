@@ -8,7 +8,6 @@ import  ImgCard  from "../../assets/Zombodie2Love-1 (1).png"
 
 
 
-
 const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
   console.log(potentialMatch)
 
@@ -39,12 +38,12 @@ const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
           </div>
           <div className="btn-for-ld">
             <span>
-              <button sx={{ color: "#FFE8E2" }} size="large" onClick={() => handleLiked(profile._id, potentialMatch)}>
+              <button size="large" onClick={() => handleLiked(profile._id, potentialMatch)}>
                   <FavoriteIcon />
               </button>
             </span>
 
-            <button sx={{ color: "#FFE8E2" }} size="large" onClick={() => handleDisliked(profile._id, potentialMatch)}>
+            <button className="down" size="large" onClick={() => handleDisliked(profile._id, potentialMatch)}>
                 <ThumbDownRoundedIcon />
             </button>
           </div>

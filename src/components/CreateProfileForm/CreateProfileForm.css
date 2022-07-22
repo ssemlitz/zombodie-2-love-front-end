@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+.cp-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(to right bottom, #759680, #89a48d, #9db29b, #b0c0aa, #c3ceba, #c6d0bd, #c9d3c1, #ccd5c4, #c0ccbb, #b4c2b3, #a9b9ab, #9db0a3);
+    height: 100vh;
+    width: 100vw;
+}
+
+nav {
+    display: none;
+    visibility: hidden;
+}
+.cp-container h1{
+    font-family:'Judson', serif;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    margin-bottom: 0px;
+    color: #06330E;
+}
+
+.create-form {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+div.create-form  {
+    margin: 15px;
+}
+
+.create-form input{
+    border-radius: 10px;
+  border: none;
+  height: 25px;
+  width: 230px;
+  padding: 10px;
+}
+
+label.cp-label {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 10px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+.create-form input:focus {
+    outline: none;
+}
+
+textarea {
+    border-style: none; 
+    border-radius: 10px;
+    padding: 5px;
+    overflow: auto;
+    outline: none; 
+}
+
+
+textarea:focus  {
+    border-style: none; 
+    overflow: auto; 
+    outline: none; 
+}
+
+.create-form-container{
+height: 400px;
+  width: 350px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(28, 168, 80, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+input[type = checkbox]{
+    height: 10px;
+    width: 10px;
+}
+
+.checkbox-input{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+.cp-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+  }
+  
+  .finish-btn {
+    background-color: #28706c;
+    height: 30px;
+    width: 80px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    color: #f9f5e6;
+    font-family: "Montserrat", sans-serif;
+  }
+
+  .return-btn {
+    background-color: #e1ff9e;
+    height: 30px;
+    width: 80px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    font-family: "Montserrat", sans-serif;
+  }
