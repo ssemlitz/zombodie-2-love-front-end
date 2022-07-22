@@ -15,7 +15,7 @@ const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
       <CardMedia component="img" height="140" image={Logo} alt="" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          <Link
+          <Link state={profile}
             to={`/profiles/${potentialMatch._id}`}
           >
             {potentialMatch.name}

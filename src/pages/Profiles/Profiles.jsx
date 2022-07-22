@@ -38,8 +38,8 @@ const Profiles = (props) => {
     props.setProfile(res)
   }
 
-  console.log("THIS IS THE PROFILE HAYDEE", profile);
-  console.log(filter);
+  // console.log("THIS IS THE PROFILE HAYDEE", profile);
+  // console.log(filter);
   return (
     <>
       <h1>Potential Matches</h1>
