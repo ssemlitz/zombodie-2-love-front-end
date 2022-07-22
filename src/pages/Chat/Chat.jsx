@@ -67,7 +67,6 @@ const Chat = (props) => {
           <div className="Chat-list">
             {chats.map((chat, idx) => (
               <div key={chat._id} onClick={() => setCurrentChat(chat)}>
-                <p>{chat._id}</p>
                 <Conversation key={idx} chat={chat} currentUserId={props.profile._id} profiles={props.profiles}/>
 
               </div>
