@@ -16,7 +16,7 @@
   font-style: italic;
   font-size: 60px;
   margin-bottom: 0px;
-  color: #06330E;
+  color: #6246CB;
   padding-bottom: 50px;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .btn-delete {
-  background-color: #06330E;
+  background-color: #826ECC;
     height: 30px;
     width: 80px;
     margin: 10px;
@@ -43,7 +43,7 @@
 
 .btn-finish {
 
-  background-color: #06330E;
+  background-color: #826ECC;
     height: 30px; 
     width: 80px;
     margin: 10px;
@@ -56,7 +56,7 @@
 }
 
 .btn-cancel {
-  background-color: #06330E;
+  background-color: #826ECC;
   height: 30px;
   width: 80px;
   margin: 10px;
@@ -70,11 +70,11 @@
 }
 .btns h2 {
     font-family: "Montserrat", sans-serif;
-    font-weight: 200;
+    font-weight: 400;
     font-style: italic;
     font-size: 36px;
     margin-bottom: 0px;
-    color: #06330E;
+    color:#6246CB;
     padding: 20px;
 }
 
@@ -82,7 +82,7 @@
   height: 650px;
   width: 450px;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(224, 188, 243, 0.4);
   box-shadow: 0 8px 32px 0 rgba(47, 25, 175, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -102,7 +102,7 @@ input[type = checkbox]{
     font-size: 15px;
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
-    gap: 15px;
+    justify-content: space-evenly;
 }
 
 .sp {
@@ -111,7 +111,7 @@ input[type = checkbox]{
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     padding: 15px;
-    gap: 60px;
+    justify-content: space-evenly;
 
 }
 
@@ -122,7 +122,7 @@ input[type = checkbox]{
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     padding: 15px;
-    gap: 50px
+    justify-content: space-evenly;
 }
 
 .height {
@@ -132,11 +132,22 @@ input[type = checkbox]{
     font-size: 15px;
     font-family: "Montserrat", sans-serif;
     padding: 15px;
-    gap: 50px;
+    justify-content: space-evenly;
 
 }
 button {
   display: flexbox;
   justify-content: center;
-  gap: 20px;
+  justify-content: space-evenly;
+}
+
+textarea {
+  border-radius: 10px;
+  background-color: #e9d5f9;
+}
+
+.create-text {
+  border-radius: 10px;
+  background-color:#e9d5f9
+
 }

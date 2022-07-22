@@ -45,7 +45,8 @@ function EditProfile(props) {
           <form className="edit-profile-form" autoComplete="off" ref={formElement} onSubmit={handleSubmit}>
             <div >
               <div>
-              <label className='sp'>Species required 
+              <label className='sp'>
+              <b>Species required</b> 
                 <select
                   type="text"
                   className="create-form"
@@ -58,7 +59,8 @@ function EditProfile(props) {
                     <option value={profileData.species="Halfbie"}>Halfbie</option>
                   </select>
               </label>
-                <label className='check-input'>Preferences:
+                <label className='check-input'>
+                <b>Preferences:</b>
                   <input
                     type="checkbox"
                     className="create-form-type"
@@ -67,8 +69,8 @@ function EditProfile(props) {
                     value={profileData.prefersZombie}
                     onChange={handleToggle}
                     checked={profileData.prefersZombie}
-                  />
-                  Zombie
+                  />Zombie
+                  
                   <input
                     type="checkbox"
                     className="create-form"
@@ -93,10 +95,11 @@ function EditProfile(props) {
                 </label>
               </div>
               <div>
-                <label className='height'>Height(inches): 
+                <label className='height'>
+                <b>Height(inches): </b> 
                   <input
                     type="text"
-                    className="create-form"
+                    className="create-text"
                     id="height-input"
                     name="height"
                     value={profileData.height}
@@ -105,7 +108,8 @@ function EditProfile(props) {
                 </label>
               </div>
               <div>
-                <label className='check-input'>Do You Eat Brains? 
+                <label className='check-input'>
+                <b>Do You Eat Brains?</b>
                 <input
                   type="checkbox"
                   className="create-form"
@@ -127,7 +131,8 @@ function EditProfile(props) {
               </label>
               </div>
               <div>
-                <label className='bio'>Bio: 
+                <label className='bio'>
+                <b>Bio</b>
                   <textarea
                     autoComplete="off"
                     className="create-form"
