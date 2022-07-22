@@ -39,8 +39,9 @@ async function getAll() {
 }
 
 async function getDetails(profileId) {
-  const res = await fetch(`${BASE_URL}/${profileId}/`, {
-    method: "GET"
+  const res = await fetch(`${BASE_URL}/${profileId}/`, { 
+    method: "GET",
+    headers: { 'Authorization': `Bearer ${tokenService.getToken()}` }
   })
   return res.json()
 }

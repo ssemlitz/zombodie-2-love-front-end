@@ -8,8 +8,6 @@ const Conversation = (props) => {
   
   useEffect(() => {
     const userId = props.chat.members.find((id)=>id !== props.currentUserId)
-    // console.log(props.currentUserId)
-    // console.log(userId)
     const getUserData = async() => {
       try {
         const data = await props.profiles.find((profile) => {
