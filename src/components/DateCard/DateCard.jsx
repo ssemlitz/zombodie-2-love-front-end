@@ -7,6 +7,7 @@ import { Typography, Button } from "@mui/material";
 import ThumbUpAltRoundedIcon from "@mui/icons-material/ThumbUpAltRounded";
 import ThumbDownRoundedIcon from "@mui/icons-material/ThumbDownRounded";
 import { Link } from "react-router-dom";
+import "./DateCard.css"
 
 const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
 

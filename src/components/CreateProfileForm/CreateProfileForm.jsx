@@ -71,7 +71,7 @@ console.log(profileData)
               value={profileData.prefersZombie}
               onChange={handleToggle}
         
-            />D E A D
+            />ZOMBIE
             <input
               type="checkbox"
               className="create-form"
