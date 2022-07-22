@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
 
   return (
+    <div className="date-cards">
     <Card sx={{ maxWidth: 345, marginTop: "200px" }}>
       <CardMedia component="img" height="140" image={Logo} alt="" />
       <CardContent>
@@ -37,6 +38,7 @@ const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
         </Button>
       </CardActions>
     </Card>
+    </div>
   );
 };
 

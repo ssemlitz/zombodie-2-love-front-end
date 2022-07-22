@@ -56,11 +56,22 @@ Our app allows users to view potential matches
 
 -------------
 
-## 🧊BOX   
+## 🧊 Box  
  
 
 𐄂 Be able to rate any date from 1-5, leaving a comment  and have the comment be visible to other users, but not visible to that particular user( person we went on date with)
 
 𐄂 Display cards individually and disappear after clicking liked or disliked. 
+
+----
+###  ✨ Credits ✨
+
+[Hunter Long](https://github.com/whlong1) ♡
+
+[David Stinson](https://github.com/DavidStinson) ♡
+
+[Ben Manley](https://github.com/ManliestBen) ♡
+
+
 
 
