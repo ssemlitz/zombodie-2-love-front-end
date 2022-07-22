@@ -41,20 +41,20 @@ const Profiles = (props) => {
 
 
   return (
-    <main>
+    <>
         {filter.length ? (
-          <>
+          <div className="pm-container">
             {filter.map((p) => (
               <div key={p._id}>
                 <DateCard potentialMatch={p} handleLiked={handleLiked} handleDisliked={handleDisliked} profile={profile} />
               
               </div>
             ))}
-          </>
+          </div>
         ) : (
           <p>No Matches Yet!</p>
         )}
-    </main>
+    </>
   );
 };
 

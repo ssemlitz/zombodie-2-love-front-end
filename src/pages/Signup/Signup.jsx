@@ -10,11 +10,11 @@ const Signup = props => {
   }
 
   return (
-    <main className="signup-container">  
+    <div className="signup-container">  
       <h1>READY TO FIND <span>ZOMBODIE 2 LOVE</span> ?</h1>
     
       <SignupForm {...props} updateMessage={updateMessage} />
-    </main>
+    </div>
   )
 }
 

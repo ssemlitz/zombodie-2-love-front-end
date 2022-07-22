@@ -28,6 +28,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
   };
   return (
     <>
+    <header className="App-header">
       {user ? (
         <nav>
           <Link to="/profiles">
@@ -88,6 +89,7 @@ const NavBar = ({ user, handleLogout, profile }) => {
       ) : (
         <></>
       )}
+      </header>
     </>
   );
 };
