@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Coustard:wght@400;900&family=Nixie+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: linear-gradient(to right top, #99c598, #8fbb8e, #85b084, #7ca67b, #729c71, #77a076, #7ca57c, #81a981, #97bd96, #add0ac, #c3e5c2, #daf9d9);
+  background-image: radial-gradient(circle, #f5886b, #fd988a, #ffa9a6, #ffbbc0, #ffced6, #f2cada, #e3c7db, #d4c4d9, #aaadc9, #7999b3, #4a8594, #286f6c);
   height: 100vh;
   width: 100vw;
 }
@@ -17,32 +17,32 @@ img {
 }
 
 .container .signUpBtn {
-  background-color: #8B9943;
+  background-color: #286F6C;
   height: 35px;
-  width: 150px;
+  width: 100px;
   margin: 10px;
   border:none;
   border-radius: 15px;
 }
 
 .container .loginBtn {
-  background-color: #de7175;
+  background-color: #F5886B;
   height: 35px;
-  width: 150px;
+  width: 100px;
   margin: 10px;
   border:none;
   border-radius: 15px;
 }
 
 .container .signUpBtn a {
-  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.5px;
   text-decoration: none;
   color: #F9FBE7;
 }
 
 .container .loginBtn a {
-  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 1.5px;
   text-decoration: none;
   color: #FFF4F3;
