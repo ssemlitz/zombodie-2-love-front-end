@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Judson:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+main .body {
+  height: 520px;
+  width: 754px;
+  margin: 50px auto;
+  border-radius: 7px 7px 7px 7px;
+  background-color: red;
+  padding: 10px;
+}
+
+.card-img{
+  display: flex;
+  float:left;
+  height: 120px;
+  width: 27px;
+
+}
+
+.card-img img {
+  border-radius: 7px 0 0 7px;
+  background-image: linear-gradient(to right top, #FF978D, #FF9A94, #FF9D9B, #FFA1A2, #FFA4A9, #FFACAE, #FFB5B3, #FFBDB9, #FFCBC2, #FFD9CE
+  , #FFE7DD, #FFF4EE); 
+}
+.p-info {
+  height: 420px;
+  width: 327px;
+  border-radius: 0 7px 10px 7px
+
+}
+
+.p-text h1 {
+  height: 300px;
+  width: 327px; 
+  /* display: flex; */
+  justify-content: right;
+}
+
+.p-text h2{
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #28706c;
+  letter-spacing: 0.2em;
+}
+.p-text p{
+  height: 125px;
+  margin: 0 0 0 38px;
+  font-family: 'Playfair Display', serif;
+  color:#28706c;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+
+}
+.link {
+  color: #28706c;
+  font-weight: 600;
+  font-size: 36px;
+  justify-content: center;
+  
+}
+.link:hover{
+  color:#28706c;
+}
+
+.btn-for-ld {
+  height: 103px;
+  width: 327px;
+  margin-top: 17px;
+  position: relative;
+  
+}
+span {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  color: #474747;
+}
+
+.btn-for-ld button {
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: 0 40px 0 16px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #28706c;
+  cursor: pointer;
+  outline: none;
+
+}
+
