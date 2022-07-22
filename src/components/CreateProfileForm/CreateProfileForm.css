@@ -9,10 +9,7 @@
     width: 100vw;
 }
 
-nav {
-    display: none;
-    visibility: hidden;
-}
+
 .cp-container h1{
     font-family:'Judson', serif;
     font-weight: 900;
