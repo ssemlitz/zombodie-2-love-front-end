@@ -1,6 +1,7 @@
 import DateCard from "../../components/DateCard/DateCard";
 import * as profileService from "../../services/profileService"
 import { createChat } from "../../services/chatService";
+import "./Profiles.css"
 
 const Profiles = (props) => {
   const { profile, profiles } = props;
@@ -38,23 +39,24 @@ const Profiles = (props) => {
     props.setProfile(res)
   }
 
-  // console.log("THIS IS THE PROFILE HAYDEE", profile);
-  // console.log(filter);
+
   return (
     <>
-      <h1>Potential Matches</h1>
-      {filter.length ? (
-        <>
-          {filter.map((p) => (
-            <div key={p._id}>
-              <DateCard potentialMatch={p} handleLiked={handleLiked} handleDisliked={handleDisliked} profile={profile} />
-            
-            </div>
-          ))}
-        </>
-      ) : (
-        <p>No Matches Yet!</p>
-      )}
+    <main>
+        <h1>Potential Matches</h1>
+        {filter.length ? (
+          <>
+            {filter.map((p) => (
+              <div key={p._id}>
+                <DateCard potentialMatch={p} handleLiked={handleLiked} handleDisliked={handleDisliked} profile={profile} />
+              
+              </div>
+            ))}
+          </>
+        ) : (
+          <p>No Matches Yet!</p>
+        )}
+    </main>
     </>
   );
 };

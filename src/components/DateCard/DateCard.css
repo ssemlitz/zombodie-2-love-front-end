@@ -2,4 +2,21 @@
 
 .date-cards{
   text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.btn {
+  color: "#FFE8E2";
+  text-decoration: none;
+  border-radius: 20%;
+}
+.link {
+  text-decoration: none;
+  color: rgb(206, 135, 203);
+  font-weight: 600;
+  
 }

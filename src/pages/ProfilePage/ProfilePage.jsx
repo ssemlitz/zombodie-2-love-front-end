@@ -6,6 +6,7 @@ const ProfilePage = () => {
   const [ profileDetails, setProfileDetails] = useState({})
   const location = useLocation()
   console.log('What is inside the location object?????', location)
+  console.log(profileDetails)
 
   useEffect(() => {
     const fetchDetails = async () => {
