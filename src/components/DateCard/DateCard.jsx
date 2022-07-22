@@ -11,6 +11,7 @@ const DateCard = ({ profile, handleLiked, handleDisliked, potentialMatch }) => {
         <h2 className="date-name">
           {potentialMatch.name}, {potentialMatch.age}
         </h2>
+        <h3>{potentialMatch.species}</h3>
         <p>{potentialMatch.bio}</p>
       </div>
       <div className="date-card-footer">

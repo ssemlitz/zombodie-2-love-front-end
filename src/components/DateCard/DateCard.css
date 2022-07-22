@@ -31,6 +31,13 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
   
 }
 
+.date-card-body h3{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  margin: 2px;
+  
+}
+
 .date-card-body p{
   font-family: 'Montserrat', sans-serif;
   width: 35ch;

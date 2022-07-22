@@ -22,7 +22,7 @@
 .create-form {
     display: flex;
     justify-content: space-between;
-    font-size: 10px;
+    /* font-size: 12px; */
 }
 
 div.create-form  {
@@ -40,7 +40,7 @@ div.create-form  {
 label.cp-label {
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 10px;
+    font-size: 13px;
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
 }
@@ -84,7 +84,6 @@ input[type = checkbox]{
 .checkbox-input{
     display: flex;
     justify-content: center;
-    font-size: 10px;
     font-size: 10px;
     font-family: "Montserrat", sans-serif;
 }

@@ -100,6 +100,7 @@ function CreateProfileForm(props) {
             name="height"
             value={profileData.height}
             onChange={handleChange}
+            placeholder='INCHES'
           />
         </div>
         <div className="create-form">
