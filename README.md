@@ -1,68 +1,54 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+# **Zombodie2Love**
+<img src="">
+<p> 98% of us will be involved in a zombie apocalypse at some point in our lives. Everyone knows that the biggest obstacle during a zombie apocalypse isn’t surviving, but finding love. We are here to solve that problem with Zombodie-2-Love; the first dating app to bring humans and zombies together. It is 20-whenever this is happening, and we won’t judge you for who you’re interested in. We don’t fully know the legality of it, but who cares? You can now match with and talk to humans and zombies in real-time. Go on cute dates such as, hoarding all the food in your local supermarket, slow-walks on the beach, or just eating your neighbors as a romantic meal. With Zombodie-2-Love, we are bringing everyone together!
+</p>
 
-Use this to go build things! 🚀
+## → <a href="https://zombodie-2-love.netlify.app/">Ready to find love ?</a>
+Our app allows users to view potential matches 
+<img src="">
 
-## To Use This Template
 
-**Replace `<name-of-your-app-here>` in the commands below with the name of your app!**
+-----------------
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-```
+  ## Getting Started 
+  → <a href="https://trello.com/invite/b/hrsbuvKI/a05e323110e9930ac82195f2ccd58c77/zombodie-to-love"> Planning materials </a> 
 
-Once you are in the project directory:
+ →  <a href="https://github.com/ssemlitz/zombodie-2-love-back-end">GitHub BackEnd Repo</a>
 
-```bash
-rm -rf .git
-```
+ ----------
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+## Technology Used 
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
-Re-initialize a git repository:
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-```bash
-git init
-```
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-Use the GitHub CLI to create a new public project repository on GitHub and add a remote named origin for this repo:
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-```bash
-gh repo create <name-of-your-app-here>-front-end --public --source=. --remote=origin
-```
 
-Run `npm i` to fetch the template's dependencies:
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
-```bash
-npm i
-```
+![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-touch a `.env` file:
+![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
-```bash
-touch .env
-```
+-------------
 
-Fill it with the following:
+## 🧊BOX   
+ 
 
-```
-REACT_APP_BACK_END_SERVER_URL=http://localhost:3001
-```
+𐄂 Be able to rate any date from 1-5, leaving a comment  and have the comment be visible to other users, but not visible to that particular user( person we went on date with)
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
+𐄂 Display cards individually and disappear after clicking liked or disliked. 
 
-Delete this README.md, then make an initial commit:
 
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
