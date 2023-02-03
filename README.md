@@ -24,13 +24,13 @@ Our app allows users to view potential matches
  ##   Contributors   
  ##### Github link ⇣
 
-<a href="">Haydee Ramirez</a>
+<a href="https://github.com/haaayd">Haydee Ramirez</a>
 
-<a href="">Jordin Huang</a>
+<a href="https://github.com/jor-din">Jordin Huang</a>
 
-<a href="">Scott Semlitz</a>
+<a href="https://github.com/ssemlitz">Scott Semlitz</a>
 
-<a href="">Jake Diefenderfer </a>
+<a href="https://github.com/jdiffy47">Jake Diefenderfer </a>
 
 --------
 
